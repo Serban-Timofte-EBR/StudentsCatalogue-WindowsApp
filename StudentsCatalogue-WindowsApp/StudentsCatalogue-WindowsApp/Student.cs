@@ -6,65 +6,234 @@ using System.Threading.Tasks;
 
 namespace StudentsCatalogue_WindowsApp
 {
-    internal class Student : ICloneable, IComparable<Student>
+    public enum enrollmentStatus { 
+        ACTIV,
+        SUSPENDED,
+        EXMATRICULATED,
+        GRADUATED
+    }
+    internal class Student
     {
+        public static int NUMBER_OF_STUDENTS_IN_DB = 0;
+
+        public readonly string student_pk;
         public readonly int id;
-        private string name;
-        private Dictionary<string, int> grades;
+        public string familyName;
+        public string givenName;
+        public DateTime dateOfBirth;
+        public string email;
+        public string address;
+        public char gender;
+        public string phoneNumber;
+        public int yearOfStudy;
+        public string university;
+        public string faculty;
+        public string programOfStudy;
+        public enrollmentStatus enrollmentStatusStudent;
+        public DateTime enrollmentDate;
+        public double mean;
 
-        public int Id { get { return id; } }
-
-        public string Name
+        public string FamilyName
         {
-            get { return name; }
-            set { if (value.Length >= 3) name = value; }
+            get { return familyName; }
+            set { if (!string.IsNullOrEmpty(value)) familyName = value; }
         }
 
-        public Dictionary<string, int> Grades
+        public string GivenName
         {
-            get { return grades; }
-            set { grades = value; }
+            get { return givenName; }
+            set { if (!string.IsNullOrEmpty(value)) givenName = value; }
         }
 
-        public Student(int id)
+        public DateTime DateOfBirth
         {
-            this.id = id;
-            this.name = "";
-            this.grades = new Dictionary<string, int>();
+            get { return dateOfBirth; }
+            set { dateOfBirth = value; }
         }
 
-        public Student(int id, string name, Dictionary<string, int> grades)
+        public string Email
         {
-            this.id = id;
-            this.name = name;
-            this.grades = grades ?? new Dictionary<string, int>();
+            get { return email; }
+            set
+            {
+                if (!string.IsNullOrEmpty(value) && value.Contains("@")
+                    && (value.EndsWith(".ro") || value.EndsWith(".com")))
+                {
+                    email = value;
+                }
+                else
+                {
+                    throw new ArgumentException("Email should contain @ and ends with .ro or .com");
+                }
+            }
         }
 
-        object ICloneable.Clone()
+        public string Address
         {
-            return this.MemberwiseClone();
+            get { return address; }
+            set { if (!string.IsNullOrEmpty(value)) address = value; }
         }
 
-        public Student Clone()
+        public char Gender
         {
-           Student clonedStudent = (Student)((ICloneable)this).Clone();
-           clonedStudent.grades = new Dictionary<string, int>(this.grades);
-
-           return clonedStudent;
+            get { return gender; }
+            set { if(value == 'M' || value == 'm' || value == 'F' || value == 'f') gender = value; } 
         }
 
-        public int CompareTo(Student other)
+        public string PhoneNumber
         {
-            double thisAverage = this.grades.Values.Average();
-            double otherAverage = other.grades.Values.Average();
-
-            return thisAverage.CompareTo(otherAverage);
+            get { return phoneNumber; }
+            set { if (value.Length == 10) phoneNumber = value; }
         }
 
-        public double GetAverageGrade()
+        public int YearOfStudy
         {
-            if (grades.Count == 0) return 0;
-            return grades.Values.Average();
+            get { return yearOfStudy; }
+            set { if(value <= DateTime.Now.Year) yearOfStudy = value; } 
+        }
+
+        public string University
+        {
+            get { return university; }
+            set { if (!string.IsNullOrEmpty(value)) university = value; }
+        }
+
+        public string Faculty
+        {
+            get { return faculty; }
+            set { if (!string.IsNullOrEmpty(value)) faculty = value; }
+        }
+
+        public string ProgramOfStudy
+        {
+            get { return programOfStudy; }
+            set { if (!string.IsNullOrEmpty(value)) programOfStudy = value; }
+        }
+
+        public enrollmentStatus EnrollmentStatusStudent
+        {
+            get { return enrollmentStatusStudent; }
+            set { enrollmentStatusStudent = value; }
+        }
+
+        public DateTime EnrollmentDate
+        {
+            get { return enrollmentDate; }
+            set { if(value <= DateTime.Now) enrollmentDate = value; }
+        }
+
+        public double Mean
+        {
+            get { return mean; }
+            set { if (value >= 0) mean = value; }
+        }
+
+        // Default Constructor
+        public Student()
+        {
+            id = new Random().Next(1000, 9999); // Generare ID random
+            student_pk = (++NUMBER_OF_STUDENTS_IN_DB).ToString(); // Incrementare și setare StudentPk
+            EnrollmentDate = DateTime.Now; 
+            EnrollmentStatusStudent = enrollmentStatus.ACTIV;
+        }
+
+        // Constructor with all parameters
+        public Student(string familyName, string givenName, DateTime dateOfBirth, string email,
+                       string address, char gender, string phoneNumber, int yearOfStudy,
+                       string university, string faculty, string programOfStudy,
+                       enrollmentStatus enrollmentStatus, DateTime enrollmentDate, double mean) : this()
+        {
+            FamilyName = familyName;
+            GivenName = givenName;
+            DateOfBirth = dateOfBirth;
+            Email = email;
+            Address = address;
+            Gender = gender;
+            PhoneNumber = phoneNumber;
+            YearOfStudy = yearOfStudy;
+            University = university;
+            Faculty = faculty;
+            ProgramOfStudy = programOfStudy;
+            EnrollmentStatusStudent = enrollmentStatus;
+            EnrollmentDate = enrollmentDate;
+            Mean = mean;
+        }
+
+        // Constructor for new student admitted
+        public Student(string familyName, string givenName, string programOfStudy, int yearOfStudy, DateTime enrollmentDate) : this()
+        {
+            FamilyName = familyName;
+            GivenName = givenName;
+            ProgramOfStudy = programOfStudy;
+            YearOfStudy = yearOfStudy;
+            EnrollmentDate = enrollmentDate;
+            EnrollmentStatusStudent = enrollmentStatus.ACTIV;
+        }
+
+        // Constructor for new registred student
+        public Student(string studentPk, string familyName, string givenName, string email, string phoneNumber, enrollmentStatus enrollmentStatus) : this()
+        {
+            student_pk = studentPk; 
+            FamilyName = familyName;
+            GivenName = givenName;
+            Email = email;
+            PhoneNumber = phoneNumber;
+            EnrollmentStatusStudent = enrollmentStatus;
+        }
+
+        public void UpdateStudentDetails(string newFamilyName = null, string newGivenName = null, DateTime? newDateOfBirth = null,
+                                 string newEmail = null, string newAddress = null, char? newGender = null,
+                                 string newPhoneNumber = null, int? newYearOfStudy = null, string newUniversity = null,
+                                 string newFaculty = null, string newProgramOfStudy = null,
+                                 enrollmentStatus? newEnrollmentStatusStudent = null, DateTime? newEnrollmentDate = null,
+                                 double? newMean = null)
+        {
+            if (!string.IsNullOrEmpty(newFamilyName)) FamilyName = newFamilyName;
+            if (!string.IsNullOrEmpty(newGivenName)) GivenName = newGivenName;
+
+            if (newDateOfBirth.HasValue) DateOfBirth = newDateOfBirth.Value;
+
+            if (!string.IsNullOrEmpty(newEmail) && newEmail.Contains("@") && (newEmail.EndsWith(".ro") || newEmail.EndsWith(".com")))
+            {
+                Email = newEmail;
+            }
+
+            if (!string.IsNullOrEmpty(newAddress)) Address = newAddress;
+
+            if (newGender.HasValue && (newGender == 'M' || newGender == 'm' || newGender == 'F' || newGender == 'f')) Gender = newGender.Value;
+
+            if (!string.IsNullOrEmpty(newPhoneNumber) && newPhoneNumber.Length == 10) PhoneNumber = newPhoneNumber;
+
+            if (newYearOfStudy.HasValue && newYearOfStudy.Value > 0 && newYearOfStudy.Value <= DateTime.Now.Year) YearOfStudy = newYearOfStudy.Value;
+
+            if (!string.IsNullOrEmpty(newUniversity)) University = newUniversity;
+            if (!string.IsNullOrEmpty(newFaculty)) Faculty = newFaculty;
+            if (!string.IsNullOrEmpty(newProgramOfStudy)) ProgramOfStudy = newProgramOfStudy;
+
+            if (newEnrollmentStatusStudent.HasValue) EnrollmentStatusStudent = newEnrollmentStatusStudent.Value;
+
+            if (newEnrollmentDate.HasValue && newEnrollmentDate.Value <= DateTime.Now) EnrollmentDate = newEnrollmentDate.Value;
+
+            if (newMean.HasValue && newMean.Value >= 0) Mean = newMean.Value;
+        }
+
+        public void ResetStudentData()
+        {
+            // Reset to default values
+            FamilyName = "";
+            GivenName = "";
+            DateOfBirth = DateTime.Now;
+            Email = "";
+            Address = "";
+            Gender = '\0'; 
+            PhoneNumber = "";
+            YearOfStudy = 0;
+            University = "";
+            Faculty = "";
+            ProgramOfStudy = "";
+            EnrollmentStatusStudent = enrollmentStatus.ACTIV;
+            EnrollmentDate = DateTime.Now; 
+            Mean = 0.0;
         }
     }
 }

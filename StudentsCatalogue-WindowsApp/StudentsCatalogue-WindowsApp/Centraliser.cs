@@ -8,50 +8,50 @@ namespace StudentsCatalogue_WindowsApp
 {
     internal class Centraliser
     {
-        //studentClassMappings = new Dictionary<int, List<int>>
-        //{
-        //    { 1, new List<int> { 101, 102 } },      //Student with id 1 is enrolled in the classes with id 101 and 102
-        //    { 2, new List<int> { 102, 103 } },      //Student with id 2 is enrolled in the classes with id 102 and 103
-        //    { 3, new List<int> { 101, 102, 103 } } //Student with id 3 is enrolled in the classes with id 101 and 102 and 102
-        //};
+        public static int NUMBER_OF_ELEMENTS_IN_CENTRALISER = 0;
 
-        public Dictionary<int, List<int>> studentClassMapper;
+        public readonly int centraliserId;
+        public string studentId;
+        public string univClassId;
+        public double grade;
+        public bool isPassed;
 
-        public Centraliser()
+        public string StudentId
         {
-            studentClassMapper = new Dictionary<int, List<int>>();
-        }
-
-        public void addStudentToClass(int studentId, int classId)
-        {
-            if (!studentClassMapper.ContainsKey(studentId))
+            get { return studentId; }
+            set
             {
-                studentClassMapper[studentId] = new List<int> { classId };
-            }
-            else
-            {
-                if (!studentClassMapper[studentId].Contains(classId))
-                {
-                    studentClassMapper[studentId].Add(classId);
-                }
+                // Aici poți adăuga validări dacă este necesar
+                studentId = value ?? throw new ArgumentNullException(nameof(StudentId), "Student ID cannot be null.");
             }
         }
 
-        public void removeStudentFromClass(int studentId, int classId)
+        public string UnivClassId
         {
-            if (studentClassMapper.ContainsKey(studentId))
+            get { return univClassId; }
+            set
             {
-                studentClassMapper[studentId].Remove(classId);
+                // Aici poți adăuga validări dacă este necesar
+                univClassId = value ?? throw new ArgumentNullException(nameof(UnivClassId), "UnivClass ID cannot be null.");
             }
         }
 
-        public List<int> getAllClassesForAStudent(int studentID)
+        public double Grade
         {
-            if (studentClassMapper.ContainsKey(studentID))
+            get { return grade; }
+            set
             {
-                return studentClassMapper[studentID];
+                if (value < 0.0 || value > 10.0) throw new ArgumentOutOfRangeException(nameof(Grade), "Grade must be between 0.0 and 10.0.");
+                grade = value;
+                IsPassed = value >= 5.0;
             }
-            return new List<int>();
         }
+
+        public bool IsPassed
+        {
+            get { return isPassed; }
+            private set { isPassed = value; }
+        }
+
     }
 }
