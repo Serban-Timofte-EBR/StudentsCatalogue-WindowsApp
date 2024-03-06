@@ -178,5 +178,46 @@ namespace StudentsCatalogue_WindowsApp
             ProfessorName = professorName;
             Credits = credits;
         }
+
+        public void UpdateClassDetails(string newUnivClassName = null, string newDescription = null, TimeSpan? newStartTime = null,
+                               double? newDuration = null, string newDayOfWeek = null, string newClassRoom = null,
+                               string newLanguage = null, string newProfessorName = null, int? newCredits = null)
+        {
+            if (!string.IsNullOrEmpty(newUnivClassName)) UnivClassName = newUnivClassName;
+            if (!string.IsNullOrEmpty(newDescription)) Description = newDescription;
+
+            if (newStartTime.HasValue) StartTime = newStartTime.Value;
+
+            if (newDuration.HasValue && newDuration.Value > 0 && newDuration.Value <= 120) Duration = newDuration.Value;
+
+            if (!string.IsNullOrEmpty(newDayOfWeek))
+            {
+                var validDays = new List<string> { "monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday" };
+                if (validDays.Contains(newDayOfWeek.ToLower())) DayOfWeek = newDayOfWeek;
+            }
+
+            if (!string.IsNullOrEmpty(newClassRoom)) ClassRoom = newClassRoom;
+
+            if (!string.IsNullOrEmpty(newLanguage)) Language = newLanguage;
+
+            if (!string.IsNullOrEmpty(newProfessorName)) ProfessorName = newProfessorName;
+
+            if (newCredits.HasValue && newCredits.Value >= 0 && newCredits.Value <= 10) Credits = newCredits.Value;
+        }
+
+        public void ResetClassData()
+        {
+            // Reset to default values
+            UnivClassName = "Default Class";
+            Description = "";
+            StartTime = new TimeSpan(0); 
+            Duration = 1.0; 
+            DayOfWeek = "monday"; 
+            ClassRoom = "";
+            Language = "Unknown";
+            ProfessorName = "";
+            Credits = 1; 
+        }
+
     }
 }

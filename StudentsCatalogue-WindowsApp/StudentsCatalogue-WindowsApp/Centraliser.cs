@@ -21,7 +21,6 @@ namespace StudentsCatalogue_WindowsApp
             get { return studentId; }
             set
             {
-                // Aici poți adăuga validări dacă este necesar
                 studentId = value ?? throw new ArgumentNullException(nameof(StudentId), "Student ID cannot be null.");
             }
         }
@@ -53,5 +52,59 @@ namespace StudentsCatalogue_WindowsApp
             private set { isPassed = value; }
         }
 
+        // Default Constructor
+        public Centraliser()
+        {
+            centraliserId = ++NUMBER_OF_ELEMENTS_IN_CENTRALISER;
+            studentId = string.Empty;
+            univClassId = string.Empty;
+            grade = 0.0;
+            isPassed = false;
+        }
+
+        // Constructor with all parameters
+        public Centraliser(string studentId, string univClassId, double grade)
+        {
+            centraliserId = ++NUMBER_OF_ELEMENTS_IN_CENTRALISER;
+            this.studentId = studentId;
+            this.univClassId = univClassId;
+            this.grade = grade;
+            this.isPassed = grade >= 5.0;
+        }
+
+        // Constructor for initial record
+        public Centraliser(string studentId, string univClassId)
+        {
+            centraliserId = ++NUMBER_OF_ELEMENTS_IN_CENTRALISER;
+            this.studentId = studentId;
+            this.univClassId = univClassId;
+            grade = -1.0; 
+            isPassed = false; 
+        }
+
+        // Constructor to close a course
+        public Centraliser(string studentId, string univClassId, double grade, bool isPassed)
+        {
+            centraliserId = ++NUMBER_OF_ELEMENTS_IN_CENTRALISER;
+            this.studentId = studentId;
+            this.univClassId = univClassId;
+            this.grade = grade;
+            this.isPassed = isPassed;
+        }
+
+        public void UpdateCentraliserDetails(string newStudentId = null, string newUnivClassId = null, double? newGrade = null)
+        {
+            if (!string.IsNullOrEmpty(newStudentId)) StudentId = newStudentId;
+            if (!string.IsNullOrEmpty(newUnivClassId)) UnivClassId = newUnivClassId;
+            if (newGrade.HasValue) Grade = newGrade.Value;
+        }
+
+        public void ResetCentraliserData()
+        {
+            studentId = string.Empty;
+            univClassId = string.Empty;
+            grade = 0.0;
+            isPassed = false;
+        }
     }
 }
