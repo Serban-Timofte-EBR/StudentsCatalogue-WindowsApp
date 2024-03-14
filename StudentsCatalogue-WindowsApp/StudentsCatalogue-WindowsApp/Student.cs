@@ -14,9 +14,8 @@ namespace StudentsCatalogue_WindowsApp
     }
     internal class Student
     {
-        public static int NUMBER_OF_STUDENTS_IN_DB = 0;
+        public static int NUMBER_OF_STUDENTS_IN_DB = 100;
 
-        public readonly string student_pk;
         public readonly int id;
         public string familyName;
         public string givenName;
@@ -131,8 +130,7 @@ namespace StudentsCatalogue_WindowsApp
         // Default Constructor
         public Student()
         {
-            id = new Random().Next(1000, 9999); // Generare ID random
-            student_pk = (++NUMBER_OF_STUDENTS_IN_DB).ToString(); // Incrementare și setare StudentPk
+            id = ++NUMBER_OF_STUDENTS_IN_DB;
             EnrollmentDate = DateTime.Now; 
             EnrollmentStatusStudent = enrollmentStatus.ACTIV;
         }
@@ -171,9 +169,9 @@ namespace StudentsCatalogue_WindowsApp
         }
 
         // Constructor for new registred student
-        public Student(string studentPk, string familyName, string givenName, string email, string phoneNumber, enrollmentStatus enrollmentStatus) : this()
+        public Student(string familyName, string givenName, string email, string phoneNumber, enrollmentStatus enrollmentStatus) : this()
         {
-            student_pk = studentPk; 
+
             FamilyName = familyName;
             GivenName = givenName;
             Email = email;
