@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "Students_Classes_Centraliser/1.0.0": {
+        "runtime": {
+          "Students_Classes_Centraliser.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Students_Classes_Centraliser/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

@@ -1,0 +1,17 @@
+\\Mac\Home\Documents\Codes\StudentsCatalogue-WindowsApp\DesignerApp\Students_Classes_Centraliser\Students_Classes_Centraliser\bin\Debug\net6.0-windows\Students_Classes_Centraliser.exe
+\\Mac\Home\Documents\Codes\StudentsCatalogue-WindowsApp\DesignerApp\Students_Classes_Centraliser\Students_Classes_Centraliser\bin\Debug\net6.0-windows\Students_Classes_Centraliser.deps.json
+\\Mac\Home\Documents\Codes\StudentsCatalogue-WindowsApp\DesignerApp\Students_Classes_Centraliser\Students_Classes_Centraliser\bin\Debug\net6.0-windows\Students_Classes_Centraliser.runtimeconfig.json
+\\Mac\Home\Documents\Codes\StudentsCatalogue-WindowsApp\DesignerApp\Students_Classes_Centraliser\Students_Classes_Centraliser\bin\Debug\net6.0-windows\Students_Classes_Centraliser.dll
+\\Mac\Home\Documents\Codes\StudentsCatalogue-WindowsApp\DesignerApp\Students_Classes_Centraliser\Students_Classes_Centraliser\bin\Debug\net6.0-windows\Students_Classes_Centraliser.pdb
+\\Mac\Home\Documents\Codes\StudentsCatalogue-WindowsApp\DesignerApp\Students_Classes_Centraliser\Students_Classes_Centraliser\obj\Debug\net6.0-windows\Students_Classes_Centraliser.Form1.resources
+\\Mac\Home\Documents\Codes\StudentsCatalogue-WindowsApp\DesignerApp\Students_Classes_Centraliser\Students_Classes_Centraliser\obj\Debug\net6.0-windows\Students_Classes_Centraliser.csproj.GenerateResource.cache
+\\Mac\Home\Documents\Codes\StudentsCatalogue-WindowsApp\DesignerApp\Students_Classes_Centraliser\Students_Classes_Centraliser\obj\Debug\net6.0-windows\Students_Classes_Centraliser.GeneratedMSBuildEditorConfig.editorconfig
+\\Mac\Home\Documents\Codes\StudentsCatalogue-WindowsApp\DesignerApp\Students_Classes_Centraliser\Students_Classes_Centraliser\obj\Debug\net6.0-windows\Students_Classes_Centraliser.AssemblyInfoInputs.cache
+\\Mac\Home\Documents\Codes\StudentsCatalogue-WindowsApp\DesignerApp\Students_Classes_Centraliser\Students_Classes_Centraliser\obj\Debug\net6.0-windows\Students_Classes_Centraliser.AssemblyInfo.cs
+\\Mac\Home\Documents\Codes\StudentsCatalogue-WindowsApp\DesignerApp\Students_Classes_Centraliser\Students_Classes_Centraliser\obj\Debug\net6.0-windows\Students_Classes_Centraliser.csproj.CoreCompileInputs.cache
+\\Mac\Home\Documents\Codes\StudentsCatalogue-WindowsApp\DesignerApp\Students_Classes_Centraliser\Students_Classes_Centraliser\obj\Debug\net6.0-windows\Students_Classes_Centraliser.dll
+\\Mac\Home\Documents\Codes\StudentsCatalogue-WindowsApp\DesignerApp\Students_Classes_Centraliser\Students_Classes_Centraliser\obj\Debug\net6.0-windows\refint\Students_Classes_Centraliser.dll
+\\Mac\Home\Documents\Codes\StudentsCatalogue-WindowsApp\DesignerApp\Students_Classes_Centraliser\Students_Classes_Centraliser\obj\Debug\net6.0-windows\Students_Classes_Centraliser.pdb
+\\Mac\Home\Documents\Codes\StudentsCatalogue-WindowsApp\DesignerApp\Students_Classes_Centraliser\Students_Classes_Centraliser\obj\Debug\net6.0-windows\Students_Classes_Centraliser.genruntimeconfig.cache
+\\Mac\Home\Documents\Codes\StudentsCatalogue-WindowsApp\DesignerApp\Students_Classes_Centraliser\Students_Classes_Centraliser\obj\Debug\net6.0-windows\ref\Students_Classes_Centraliser.dll
+\\Mac\Home\Documents\Codes\StudentsCatalogue-WindowsApp\DesignerApp\Students_Classes_Centraliser\Students_Classes_Centraliser\obj\Debug\net6.0-windows\Students_Classes_Centraliser.AdaugaStudent.resources
