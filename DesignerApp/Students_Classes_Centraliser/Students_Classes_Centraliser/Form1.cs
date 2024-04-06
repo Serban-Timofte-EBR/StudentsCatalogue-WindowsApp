@@ -56,11 +56,33 @@ namespace Students_Classes_Centraliser
                 mean: 8.9
             );
 
+            UnivClass pawClass = new UnivClass(
+                "PAW",
+                "C# and Windows Forms",
+                "Prof. Dr. Ion Ionescu",
+                5
+            );
+
+            UnivClass sddClass = new UnivClass(
+                "SDD",
+                "Implementing data structures in C",
+                "Prof. Dr. Struct Structurescu",
+                4
+            );
+
+            UnivClass mraiClass = new UnivClass(
+                "MRAI",
+                "Risk management",
+                "Prof. Dr. Risculescovici Riscovici",
+                3
+            );
+
             ListViewItem lvStud1 = new ListViewItem(new string[]
                 {student1.FamilyName, student1.GivenName, student1.DateOfBirth.ToString(),
                 student1.Email, student1.EnrollmentStatusStudent.ToString(), student1.yearOfStudy.ToString(),
                 student1.ProgramOfStudy});
 
+            lvStud1.Tag = student1;
             lvStudenti.Items.Add(lvStud1);
 
             ListViewItem lvStud2 = new ListViewItem(new string[]
@@ -68,6 +90,7 @@ namespace Students_Classes_Centraliser
                 student2.Email, student2.EnrollmentStatusStudent.ToString(), student2.yearOfStudy.ToString(),
                 student2.ProgramOfStudy});
 
+            lvStud2.Tag = student2;
             lvStudenti.Items.Add(lvStud2);
 
             ListViewItem lvStud3 = new ListViewItem(new string[]
@@ -75,7 +98,32 @@ namespace Students_Classes_Centraliser
                 student3.Email, student3.EnrollmentStatusStudent.ToString(), student3.yearOfStudy.ToString(),
                 student3.ProgramOfStudy});
 
+            lvStud3.Tag = student3;
             lvStudenti.Items.Add(lvStud3);
+
+            ListViewItem lvClasa1 = new ListViewItem(new string[]
+            {
+                pawClass.UnivClassName, pawClass.Description, pawClass.ProfessorName, pawClass.Credits.ToString()
+            });
+
+            lvClasa1.Tag = pawClass;
+            lvClase.Items.Add(lvClasa1);
+
+            ListViewItem lvClasa2 = new ListViewItem(new string[]
+            {
+                sddClass.UnivClassName, sddClass.Description, sddClass.ProfessorName, sddClass.Credits.ToString()
+            });
+
+            lvClasa2.Tag = sddClass;
+            lvClase.Items.Add(lvClasa2);
+
+            ListViewItem lvClasa3 = new ListViewItem(new string[]
+            {
+                mraiClass.UnivClassName, mraiClass.Description, mraiClass.proffesorName, mraiClass.Credits.ToString()
+            });
+
+            lvClasa3.Tag = mraiClass;
+            lvClase.Items.Add(lvClasa3);
         }
 
         private void adaugaToolStripMenuItem_Click(object sender, EventArgs e)
@@ -93,6 +141,93 @@ namespace Students_Classes_Centraliser
                 lvStudentNou.Tag = stud;
                 lvStudenti.Items.Add(lvStudentNou);
             }
+        }
+
+        private void modificaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (lvStudenti.Items.Count > 0)
+            {
+                ListViewItem lvItem = lvStudenti.SelectedItems[0];
+                Student stud = lvItem.Tag as Student;
+                AdaugaStudent formEdit = new AdaugaStudent(stud);
+                if (formEdit.ShowDialog() == DialogResult.OK)
+                {
+                    lvItem.SubItems[0].Text = stud.FamilyName;
+                    lvItem.SubItems[1].Text = stud.GivenName;
+                    lvItem.SubItems[2].Text = stud.DateOfBirth.ToString("d");
+                    lvItem.SubItems[3].Text = stud.Email;
+                    lvItem.SubItems[4].Text = stud.EnrollmentStatusStudent.ToString();
+                    lvItem.SubItems[5].Text = stud.YearOfStudy.ToString();
+                    lvItem.SubItems[6].Text = stud.ProgramOfStudy.ToString();
+                }
+            }
+        }
+
+        private void stergeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (lvStudenti.Items.Count > 0)
+            {
+                if (MessageBox.Show("Esti sigur ca vrei sa stergi inregistrarea?", "Warning",
+                    MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    lvStudenti.SelectedItems[0].Remove();
+                }
+            }
+        }
+
+        private void adaugaToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            UnivClass c = null;
+            AdaugaClasa formClasa = new AdaugaClasa(c);
+            if (formClasa.ShowDialog() == DialogResult.OK)
+            {
+                c = formClasa.cformClass;
+                ListViewItem lvNou = new ListViewItem(new string[]
+                {
+                    c.UnivClassName, c.Description, c.ProfessorName, c.Credits.ToString()
+                });
+                lvNou.Tag = c;
+                lvClase.Items.Add(lvNou);
+            }
+        }
+
+        private void editeazaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (lvClase.SelectedItems.Count > 0)
+            {
+                UnivClass c = lvClase.SelectedItems[0].Tag as UnivClass;
+                AdaugaClasa formEdit = new AdaugaClasa(c);
+                if (formEdit.ShowDialog() == DialogResult.OK)
+                {
+                    ListViewItem lvItem = lvClase.SelectedItems[0] as ListViewItem;
+                    lvItem.SubItems[0].Text = c.UnivClassName;
+                    lvItem.SubItems[1].Text = c.Description;
+                    lvItem.SubItems[2].Text = c.ProfessorName;
+                    lvItem.SubItems[3].Text = c.Credits.ToString();
+                }
+            }
+        }
+
+        private void stergeToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            if (lvClase.SelectedItems.Count > 0)
+            {
+                if (MessageBox.Show("Esti sigur ca vrei sa stergi aceasta inregistrare?", "Warning",
+                    MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    lvClase.SelectedItems[0].Remove();
+                }
+            }
+        }
+
+        private void contextMenuStrip1_Opening(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+
+        }
+
+        private void adaugaToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            adaugaToolStripMenuItem_Click(sender, e);
         }
     }
 }

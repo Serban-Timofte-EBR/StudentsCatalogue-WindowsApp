@@ -24,13 +24,13 @@ namespace Students_Classes_Centraliser
             else
             {
                 btnAdauga.Text = "Editeaza";
-                lbAdaugaNume.Text = stud.FamilyName;
-                lbAdaugaPrenume.Text = stud.GivenName;
+                tbAdaugaNume.Text = stud.FamilyName;
+                tbAdaugaPrenume.Text = stud.GivenName;
                 dateAdaugaDataNasterii.Value = stud.DateOfBirth;
-                lbAdaugaEmail.Text = stud.Email;
+                tbAdaugaEmail.Text = stud.Email;
                 cbAdaugaStatus.Text = stud.EnrollmentStatusStudent.ToString();
-                lbAdaugaAnStudiu.Text = stud.YearOfStudy.ToString();
-                lbProgramStudiu.Text = stud.ProgramOfStudy;
+                tbAdaugaAnStudiu.Text = stud.YearOfStudy.ToString();
+                tbAdaugaProgramStudiu.Text = stud.ProgramOfStudy;
             }
             sFormStudent = stud;
         }
