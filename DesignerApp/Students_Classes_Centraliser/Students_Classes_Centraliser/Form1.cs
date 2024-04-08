@@ -229,5 +229,137 @@ namespace Students_Classes_Centraliser
         {
             adaugaToolStripMenuItem_Click(sender, e);
         }
+
+        private void lvStudenti_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tbTitluStudenti_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void adaugaToolStripMenuItem2_Click_1(object sender, EventArgs e)
+        {
+            Student stud = null;
+            AdaugaStudent formAdauga = new AdaugaStudent(stud);
+            if (formAdauga.ShowDialog() == DialogResult.OK)
+            {
+                stud = formAdauga.sFormStudent;
+                ListViewItem studNou = new ListViewItem(new string[]
+                {
+                    stud.FamilyName, stud.GivenName, stud.DateOfBirth.ToString(), stud.Email, stud.EnrollmentStatusStudent.ToString(),
+                    stud.yearOfStudy.ToString(), stud.ProgramOfStudy
+                });
+                studNou.Tag = stud;
+                lvStudenti.Items.Add(studNou);
+            }
+        }
+
+        private void editeazaToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Student stud = lvStudenti.SelectedItems[0].Tag as Student;
+            AdaugaStudent formEdit = new AdaugaStudent(stud);
+            if (formEdit.ShowDialog() == DialogResult.OK)
+            {
+                stud = formEdit.sFormStudent;
+                ListViewItem lvItem = lvStudenti.SelectedItems[0] as ListViewItem;
+                lvItem.SubItems[0].Text = stud.FamilyName;
+                lvItem.SubItems[1].Text = stud.GivenName;
+                lvItem.SubItems[2].Text = stud.DateOfBirth.ToString("d");
+                lvItem.SubItems[3].Text = stud.Email;
+                lvItem.SubItems[4].Text = stud.EnrollmentStatusStudent.ToString();
+                lvItem.SubItems[5].Text = stud.YearOfStudy.ToString();
+                lvItem.SubItems[6].Text = stud.ProgramOfStudy.ToString(); ;
+            }
+        }
+
+        private void stergeToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            if (lvStudenti.SelectedItems.Count > 0)
+            {
+                if (MessageBox.Show("Esti sigur ca vrei sa stergi acest student?", "Warning",
+                    MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    lvStudenti.SelectedItems[0].Remove();
+                }
+            }
+        }
+
+        private void adaugaToolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+            UnivClass c = null;
+            AdaugaClasa formAdauga = new AdaugaClasa(c);
+            if (formAdauga.ShowDialog() == DialogResult.OK)
+            {
+                c = formAdauga.cformClass;
+                ListViewItem item = new ListViewItem(new String[]
+                {
+                    c.UnivClassName, c.Description, c.ProfessorName, c.Credits.ToString()
+                });
+                item.Tag = c;
+                lvClase.Items.Add(item);
+            }
+        }
+
+        private void editeazaToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            UnivClass c = lvClase.SelectedItems[0].Tag as UnivClass;
+            AdaugaClasa formEdit = new AdaugaClasa(c);
+            if (formEdit.ShowDialog() == DialogResult.OK)
+            {
+                c = formEdit.cformClass;
+                ListViewItem item = lvClase.SelectedItems[0] as ListViewItem;
+                item.SubItems[0].Text = c.UnivClassName;
+                item.SubItems[1].Text = c.Description;
+                item.SubItems[2].Text = c.ProfessorName;
+                item.SubItems[3].Text = c.Credits.ToString();
+            }
+        }
+
+        private void stergeToolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+            if (lvClase.SelectedItems.Count > 0)
+            {
+                if (MessageBox.Show("Esti sigur ca vrei sa stergi inregistrarea?", "Warning",
+                    MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    lvClase.SelectedItems[0].Remove();
+                }
+            }
+        }
+
+        private void contextMenuStripStudenti_Opening(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            if (lvStudenti.SelectedItems.Count > 0)
+            {
+                adaugaToolStripMenuItem1.Enabled = true;
+                editeazaToolStripMenuItem1.Enabled = true;
+                stergeToolStripMenuItem2.Enabled = true;
+            }
+            else
+            {
+                adaugaToolStripMenuItem1.Enabled = true;
+                editeazaToolStripMenuItem1.Enabled = false;
+                stergeToolStripMenuItem2.Enabled = false;
+            }
+        }
+
+        private void contextMenuStripClase_Opening(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            if (lvClase.SelectedItems.Count > 0)
+            {
+                adaugaToolStripMenuItem2.Enabled = true;
+                editeazaToolStripMenuItem2.Enabled = true;
+                stergeToolStripMenuItem3.Enabled = true;
+            }
+            else
+            {
+                adaugaToolStripMenuItem2.Enabled = true;
+                editeazaToolStripMenuItem2.Enabled = false;
+                stergeToolStripMenuItem3.Enabled = false;
+            }
+        }
     }
 }
