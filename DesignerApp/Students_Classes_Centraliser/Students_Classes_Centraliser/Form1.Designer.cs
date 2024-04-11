@@ -71,6 +71,7 @@
             adaugaToolStripMenuItem3 = new ToolStripMenuItem();
             editeazaToolStripMenuItem2 = new ToolStripMenuItem();
             stergeToolStripMenuItem3 = new ToolStripMenuItem();
+            treeView1 = new TreeView();
             contextMenuStripStudenti.SuspendLayout();
             navBarApp.SuspendLayout();
             contextMenuStripClase.SuspendLayout();
@@ -162,7 +163,7 @@
             navBarApp.Items.AddRange(new ToolStripItem[] { studentiToolStripMenuItem, claseToolStripMenuItem });
             navBarApp.Location = new Point(0, 0);
             navBarApp.Name = "navBarApp";
-            navBarApp.Size = new Size(1894, 42);
+            navBarApp.Size = new Size(1894, 40);
             navBarApp.TabIndex = 2;
             navBarApp.Text = "navBarApp";
             // 
@@ -170,7 +171,7 @@
             // 
             studentiToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { adaugaToolStripMenuItem, modificaToolStripMenuItem, stergeToolStripMenuItem, fisierToolStripMenuItem });
             studentiToolStripMenuItem.Name = "studentiToolStripMenuItem";
-            studentiToolStripMenuItem.Size = new Size(123, 38);
+            studentiToolStripMenuItem.Size = new Size(123, 36);
             studentiToolStripMenuItem.Text = "Studenti";
             // 
             // adaugaToolStripMenuItem
@@ -233,27 +234,27 @@
             // 
             claseToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { adaugaToolStripMenuItem1, editeazaToolStripMenuItem, stergeToolStripMenuItem1, fisiereToolStripMenuItem });
             claseToolStripMenuItem.Name = "claseToolStripMenuItem";
-            claseToolStripMenuItem.Size = new Size(90, 38);
+            claseToolStripMenuItem.Size = new Size(90, 36);
             claseToolStripMenuItem.Text = "Clase";
             // 
             // adaugaToolStripMenuItem1
             // 
             adaugaToolStripMenuItem1.Name = "adaugaToolStripMenuItem1";
-            adaugaToolStripMenuItem1.Size = new Size(359, 44);
+            adaugaToolStripMenuItem1.Size = new Size(235, 44);
             adaugaToolStripMenuItem1.Text = "Adauga";
             adaugaToolStripMenuItem1.Click += adaugaToolStripMenuItem1_Click;
             // 
             // editeazaToolStripMenuItem
             // 
             editeazaToolStripMenuItem.Name = "editeazaToolStripMenuItem";
-            editeazaToolStripMenuItem.Size = new Size(359, 44);
+            editeazaToolStripMenuItem.Size = new Size(235, 44);
             editeazaToolStripMenuItem.Text = "Editeaza";
             editeazaToolStripMenuItem.Click += editeazaToolStripMenuItem_Click;
             // 
             // stergeToolStripMenuItem1
             // 
             stergeToolStripMenuItem1.Name = "stergeToolStripMenuItem1";
-            stergeToolStripMenuItem1.Size = new Size(359, 44);
+            stergeToolStripMenuItem1.Size = new Size(235, 44);
             stergeToolStripMenuItem1.Text = "Sterge";
             stergeToolStripMenuItem1.Click += stergeToolStripMenuItem1_Click;
             // 
@@ -261,34 +262,34 @@
             // 
             fisiereToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { salvareBinarToolStripMenuItem1, salvareXMLToolStripMenuItem1, restaurareBinarToolStripMenuItem1, restaurareXMLToolStripMenuItem1 });
             fisiereToolStripMenuItem.Name = "fisiereToolStripMenuItem";
-            fisiereToolStripMenuItem.Size = new Size(359, 44);
+            fisiereToolStripMenuItem.Size = new Size(235, 44);
             fisiereToolStripMenuItem.Text = "Fisiere";
             // 
             // salvareBinarToolStripMenuItem1
             // 
             salvareBinarToolStripMenuItem1.Name = "salvareBinarToolStripMenuItem1";
-            salvareBinarToolStripMenuItem1.Size = new Size(359, 44);
+            salvareBinarToolStripMenuItem1.Size = new Size(319, 44);
             salvareBinarToolStripMenuItem1.Text = "Salvare Binar";
             salvareBinarToolStripMenuItem1.Click += salvareBinarToolStripMenuItem1_Click;
             // 
             // salvareXMLToolStripMenuItem1
             // 
             salvareXMLToolStripMenuItem1.Name = "salvareXMLToolStripMenuItem1";
-            salvareXMLToolStripMenuItem1.Size = new Size(359, 44);
+            salvareXMLToolStripMenuItem1.Size = new Size(319, 44);
             salvareXMLToolStripMenuItem1.Text = "Salvare XML";
             salvareXMLToolStripMenuItem1.Click += salvareXMLToolStripMenuItem1_Click;
             // 
             // restaurareBinarToolStripMenuItem1
             // 
             restaurareBinarToolStripMenuItem1.Name = "restaurareBinarToolStripMenuItem1";
-            restaurareBinarToolStripMenuItem1.Size = new Size(359, 44);
+            restaurareBinarToolStripMenuItem1.Size = new Size(319, 44);
             restaurareBinarToolStripMenuItem1.Text = "Restaurare Binar";
             restaurareBinarToolStripMenuItem1.Click += restaurareBinarToolStripMenuItem1_Click;
             // 
             // restaurareXMLToolStripMenuItem1
             // 
             restaurareXMLToolStripMenuItem1.Name = "restaurareXMLToolStripMenuItem1";
-            restaurareXMLToolStripMenuItem1.Size = new Size(359, 44);
+            restaurareXMLToolStripMenuItem1.Size = new Size(319, 44);
             restaurareXMLToolStripMenuItem1.Text = "Restaurare XML";
             restaurareXMLToolStripMenuItem1.Click += restaurareXMLToolStripMenuItem1_Click;
             // 
@@ -360,11 +361,19 @@
             stergeToolStripMenuItem3.Text = "Sterge";
             stergeToolStripMenuItem3.Click += stergeToolStripMenuItem3_Click;
             // 
+            // treeView1
+            // 
+            treeView1.Location = new Point(452, 560);
+            treeView1.Name = "treeView1";
+            treeView1.Size = new Size(876, 447);
+            treeView1.TabIndex = 5;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1894, 926);
+            ClientSize = new Size(1894, 1054);
+            Controls.Add(treeView1);
             Controls.Add(lvClase);
             Controls.Add(tbTitluClase);
             Controls.Add(tbTitluStudenti);
@@ -426,5 +435,6 @@
         private ToolStripMenuItem salvareXMLToolStripMenuItem1;
         private ToolStripMenuItem restaurareBinarToolStripMenuItem1;
         private ToolStripMenuItem restaurareXMLToolStripMenuItem1;
+        private TreeView treeView1;
     }
 }

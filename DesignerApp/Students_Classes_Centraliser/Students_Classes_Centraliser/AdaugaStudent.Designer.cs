@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             lbAdaugaNume = new Label();
             lbAdaugaPrenume = new Label();
             lbAdaugaDataNasterii = new Label();
@@ -44,6 +45,8 @@
             dateAdaugaDataNasterii = new DateTimePicker();
             btnAdauga = new Button();
             btnRenunta = new Button();
+            errorProviderEmail = new ErrorProvider(components);
+            ((System.ComponentModel.ISupportInitialize)errorProviderEmail).BeginInit();
             SuspendLayout();
             // 
             // lbAdaugaNume
@@ -129,6 +132,7 @@
             tbAdaugaEmail.Name = "tbAdaugaEmail";
             tbAdaugaEmail.Size = new Size(641, 39);
             tbAdaugaEmail.TabIndex = 9;
+            tbAdaugaEmail.Validating += tbAdaugaEmail_Validating;
             // 
             // tbAdaugaAnStudiu
             // 
@@ -182,6 +186,10 @@
             btnRenunta.Text = "Renunta";
             btnRenunta.UseVisualStyleBackColor = false;
             // 
+            // errorProviderEmail
+            // 
+            errorProviderEmail.ContainerControl = this;
+            // 
             // AdaugaStudent
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
@@ -206,6 +214,7 @@
             Controls.Add(lbAdaugaNume);
             Name = "AdaugaStudent";
             Text = "AdaugaStudent";
+            ((System.ComponentModel.ISupportInitialize)errorProviderEmail).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -228,5 +237,6 @@
         private DateTimePicker dateAdaugaDataNasterii;
         private Button btnAdauga;
         private Button btnRenunta;
+        private ErrorProvider errorProviderEmail;
     }
 }

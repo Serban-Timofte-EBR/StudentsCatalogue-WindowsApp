@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Text.RegularExpressions;
 
 namespace Students_Classes_Centraliser
 {
@@ -51,6 +52,26 @@ namespace Students_Classes_Centraliser
             }
             sFormStudent.YearOfStudy = Convert.ToInt32(tbAdaugaAnStudiu.Text);
             sFormStudent.ProgramOfStudy = tbAdaugaProgramStudiu.Text;
+        }
+
+        private void tbAdaugaEmail_Validating(object sender, CancelEventArgs e)
+        {
+            string pattern = @"^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$";
+            Regex regex = new Regex(pattern);
+
+            if(tbAdaugaEmail != null)
+            {
+                if(!regex.IsMatch(tbAdaugaEmail.Text))
+                {
+                    errorProviderEmail.SetError(tbAdaugaEmail, "Emailul este invalid");
+                    e.Cancel = true;
+                }
+                else
+                {
+                    errorProviderEmail.SetError(tbAdaugaEmail, "");
+                }
+            }
+
         }
     }
 }

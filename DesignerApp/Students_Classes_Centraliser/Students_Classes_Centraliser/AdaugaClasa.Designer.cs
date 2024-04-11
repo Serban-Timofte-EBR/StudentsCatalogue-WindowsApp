@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             lbNumeClasa = new Label();
             lbDescriereClasa = new Label();
             lbProfesor = new Label();
@@ -38,6 +39,10 @@
             tbCredite = new TextBox();
             btAdauga = new Button();
             btRenunta = new Button();
+            errorProviderDescriere = new ErrorProvider(components);
+            errorProviderCredite = new ErrorProvider(components);
+            ((System.ComponentModel.ISupportInitialize)errorProviderDescriere).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)errorProviderCredite).BeginInit();
             SuspendLayout();
             // 
             // lbNumeClasa
@@ -89,6 +94,7 @@
             tbDescriere.Name = "tbDescriere";
             tbDescriere.Size = new Size(411, 39);
             tbDescriere.TabIndex = 5;
+            tbDescriere.Validating += tbDescriere_Validating;
             // 
             // tbProfesor
             // 
@@ -103,6 +109,7 @@
             tbCredite.Name = "tbCredite";
             tbCredite.Size = new Size(411, 39);
             tbCredite.TabIndex = 7;
+            tbCredite.Validating += tbCredite_Validating;
             // 
             // btAdauga
             // 
@@ -126,6 +133,14 @@
             btRenunta.Text = "Renunta";
             btRenunta.UseVisualStyleBackColor = false;
             // 
+            // errorProviderDescriere
+            // 
+            errorProviderDescriere.ContainerControl = this;
+            // 
+            // errorProviderCredite
+            // 
+            errorProviderCredite.ContainerControl = this;
+            // 
             // AdaugaClasa
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
@@ -143,6 +158,8 @@
             Controls.Add(lbNumeClasa);
             Name = "AdaugaClasa";
             Text = "AdaugaClasa";
+            ((System.ComponentModel.ISupportInitialize)errorProviderDescriere).EndInit();
+            ((System.ComponentModel.ISupportInitialize)errorProviderCredite).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -159,5 +176,7 @@
         private TextBox tbCredite;
         private Button btAdauga;
         private Button btRenunta;
+        private ErrorProvider errorProviderDescriere;
+        private ErrorProvider errorProviderCredite;
     }
 }

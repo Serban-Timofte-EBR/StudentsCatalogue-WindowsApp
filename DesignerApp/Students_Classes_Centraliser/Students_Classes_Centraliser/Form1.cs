@@ -561,10 +561,10 @@ namespace Students_Classes_Centraliser
             fd.Filter = "fisier xml | *.xml";
             fd.CheckFileExists = true;
 
-            if(fd.ShowDialog() == DialogResult.OK )
+            if (fd.ShowDialog() == DialogResult.OK)
             {
                 Stream fisier = File.OpenRead(fd.FileName);
-                XmlSerializer serializer = new XmlSerializer (typeof(List<UnivClass>));
+                XmlSerializer serializer = new XmlSerializer(typeof(List<UnivClass>));
                 List<UnivClass> lista = (List<UnivClass>)serializer.Deserialize(fisier);
 
                 if (MessageBox.Show("Sunt clase in lista. Doriti sa stergeti lista existenta?", "Warning",
@@ -573,7 +573,7 @@ namespace Students_Classes_Centraliser
                     lvClase.Items.Clear();
                 }
 
-                foreach(UnivClass c in lista)
+                foreach (UnivClass c in lista)
                 {
                     ListViewItem item = new ListViewItem(new string[]
                     {
