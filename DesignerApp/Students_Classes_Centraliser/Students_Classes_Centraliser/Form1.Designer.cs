@@ -47,10 +47,20 @@
             adaugaToolStripMenuItem = new ToolStripMenuItem();
             modificaToolStripMenuItem = new ToolStripMenuItem();
             stergeToolStripMenuItem = new ToolStripMenuItem();
+            fisierToolStripMenuItem = new ToolStripMenuItem();
+            salvareBinarToolStripMenuItem = new ToolStripMenuItem();
+            salvareXMLToolStripMenuItem = new ToolStripMenuItem();
+            restaurareBinarToolStripMenuItem = new ToolStripMenuItem();
+            restaurareXMLToolStripMenuItem = new ToolStripMenuItem();
             claseToolStripMenuItem = new ToolStripMenuItem();
             adaugaToolStripMenuItem1 = new ToolStripMenuItem();
             editeazaToolStripMenuItem = new ToolStripMenuItem();
             stergeToolStripMenuItem1 = new ToolStripMenuItem();
+            fisiereToolStripMenuItem = new ToolStripMenuItem();
+            salvareBinarToolStripMenuItem1 = new ToolStripMenuItem();
+            salvareXMLToolStripMenuItem1 = new ToolStripMenuItem();
+            restaurareBinarToolStripMenuItem1 = new ToolStripMenuItem();
+            restaurareXMLToolStripMenuItem1 = new ToolStripMenuItem();
             tbTitluClase = new TextBox();
             lvClase = new ListView();
             Clasa = new ColumnHeader();
@@ -71,10 +81,10 @@
             lvStudenti.Columns.AddRange(new ColumnHeader[] { Nume, Prenume, DataNastere, Email, Status, An, ProgramDeStudiu });
             lvStudenti.ContextMenuStrip = contextMenuStripStudenti;
             lvStudenti.FullRowSelect = true;
-            lvStudenti.Location = new Point(1, 46);
-            lvStudenti.Margin = new Padding(2, 1, 2, 1);
+            lvStudenti.Location = new Point(2, 98);
+            lvStudenti.Margin = new Padding(4, 2, 4, 2);
             lvStudenti.Name = "lvStudenti";
-            lvStudenti.Size = new Size(452, 201);
+            lvStudenti.Size = new Size(836, 424);
             lvStudenti.TabIndex = 0;
             lvStudenti.UseCompatibleStateImageBehavior = false;
             lvStudenti.View = View.Details;
@@ -112,36 +122,36 @@
             contextMenuStripStudenti.ImageScalingSize = new Size(32, 32);
             contextMenuStripStudenti.Items.AddRange(new ToolStripItem[] { adaugaToolStripMenuItem2, editeazaToolStripMenuItem1, stergeToolStripMenuItem2 });
             contextMenuStripStudenti.Name = "contextMenuStripStudenti";
-            contextMenuStripStudenti.Size = new Size(118, 70);
+            contextMenuStripStudenti.Size = new Size(177, 118);
             contextMenuStripStudenti.Opening += contextMenuStripStudenti_Opening;
             // 
             // adaugaToolStripMenuItem2
             // 
             adaugaToolStripMenuItem2.Name = "adaugaToolStripMenuItem2";
-            adaugaToolStripMenuItem2.Size = new Size(117, 22);
+            adaugaToolStripMenuItem2.Size = new Size(176, 38);
             adaugaToolStripMenuItem2.Text = "Adauga";
             adaugaToolStripMenuItem2.Click += adaugaToolStripMenuItem2_Click_1;
             // 
             // editeazaToolStripMenuItem1
             // 
             editeazaToolStripMenuItem1.Name = "editeazaToolStripMenuItem1";
-            editeazaToolStripMenuItem1.Size = new Size(117, 22);
+            editeazaToolStripMenuItem1.Size = new Size(176, 38);
             editeazaToolStripMenuItem1.Text = "Editeaza";
             editeazaToolStripMenuItem1.Click += editeazaToolStripMenuItem1_Click;
             // 
             // stergeToolStripMenuItem2
             // 
             stergeToolStripMenuItem2.Name = "stergeToolStripMenuItem2";
-            stergeToolStripMenuItem2.Size = new Size(117, 22);
+            stergeToolStripMenuItem2.Size = new Size(176, 38);
             stergeToolStripMenuItem2.Text = "Sterge";
             stergeToolStripMenuItem2.Click += stergeToolStripMenuItem2_Click;
             // 
             // tbTitluStudenti
             // 
-            tbTitluStudenti.Location = new Point(1, 25);
-            tbTitluStudenti.Margin = new Padding(2, 1, 2, 1);
+            tbTitluStudenti.Location = new Point(2, 53);
+            tbTitluStudenti.Margin = new Padding(4, 2, 4, 2);
             tbTitluStudenti.Name = "tbTitluStudenti";
-            tbTitluStudenti.Size = new Size(451, 23);
+            tbTitluStudenti.Size = new Size(834, 39);
             tbTitluStudenti.TabIndex = 1;
             tbTitluStudenti.Text = "                                           Lista Studenti";
             tbTitluStudenti.TextChanged += tbTitluStudenti_TextChanged;
@@ -152,73 +162,142 @@
             navBarApp.Items.AddRange(new ToolStripItem[] { studentiToolStripMenuItem, claseToolStripMenuItem });
             navBarApp.Location = new Point(0, 0);
             navBarApp.Name = "navBarApp";
-            navBarApp.Padding = new Padding(3, 1, 0, 1);
-            navBarApp.Size = new Size(1020, 24);
+            navBarApp.Size = new Size(1894, 42);
             navBarApp.TabIndex = 2;
             navBarApp.Text = "navBarApp";
             // 
             // studentiToolStripMenuItem
             // 
-            studentiToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { adaugaToolStripMenuItem, modificaToolStripMenuItem, stergeToolStripMenuItem });
+            studentiToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { adaugaToolStripMenuItem, modificaToolStripMenuItem, stergeToolStripMenuItem, fisierToolStripMenuItem });
             studentiToolStripMenuItem.Name = "studentiToolStripMenuItem";
-            studentiToolStripMenuItem.Size = new Size(63, 22);
+            studentiToolStripMenuItem.Size = new Size(123, 38);
             studentiToolStripMenuItem.Text = "Studenti";
             // 
             // adaugaToolStripMenuItem
             // 
             adaugaToolStripMenuItem.Name = "adaugaToolStripMenuItem";
-            adaugaToolStripMenuItem.Size = new Size(121, 22);
+            adaugaToolStripMenuItem.Size = new Size(240, 44);
             adaugaToolStripMenuItem.Text = "Adauga";
             adaugaToolStripMenuItem.Click += adaugaToolStripMenuItem_Click;
             // 
             // modificaToolStripMenuItem
             // 
             modificaToolStripMenuItem.Name = "modificaToolStripMenuItem";
-            modificaToolStripMenuItem.Size = new Size(121, 22);
+            modificaToolStripMenuItem.Size = new Size(240, 44);
             modificaToolStripMenuItem.Text = "Modifica";
             modificaToolStripMenuItem.Click += modificaToolStripMenuItem_Click;
             // 
             // stergeToolStripMenuItem
             // 
             stergeToolStripMenuItem.Name = "stergeToolStripMenuItem";
-            stergeToolStripMenuItem.Size = new Size(121, 22);
+            stergeToolStripMenuItem.Size = new Size(240, 44);
             stergeToolStripMenuItem.Text = "Sterge";
             stergeToolStripMenuItem.Click += stergeToolStripMenuItem_Click;
             // 
+            // fisierToolStripMenuItem
+            // 
+            fisierToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { salvareBinarToolStripMenuItem, salvareXMLToolStripMenuItem, restaurareBinarToolStripMenuItem, restaurareXMLToolStripMenuItem });
+            fisierToolStripMenuItem.Name = "fisierToolStripMenuItem";
+            fisierToolStripMenuItem.Size = new Size(240, 44);
+            fisierToolStripMenuItem.Text = "Fisier";
+            // 
+            // salvareBinarToolStripMenuItem
+            // 
+            salvareBinarToolStripMenuItem.Name = "salvareBinarToolStripMenuItem";
+            salvareBinarToolStripMenuItem.Size = new Size(319, 44);
+            salvareBinarToolStripMenuItem.Text = "Salvare Binar";
+            salvareBinarToolStripMenuItem.Click += salvareBinarToolStripMenuItem_Click;
+            // 
+            // salvareXMLToolStripMenuItem
+            // 
+            salvareXMLToolStripMenuItem.Name = "salvareXMLToolStripMenuItem";
+            salvareXMLToolStripMenuItem.Size = new Size(319, 44);
+            salvareXMLToolStripMenuItem.Text = "Salvare XML";
+            salvareXMLToolStripMenuItem.Click += salvareXMLToolStripMenuItem_Click;
+            // 
+            // restaurareBinarToolStripMenuItem
+            // 
+            restaurareBinarToolStripMenuItem.Name = "restaurareBinarToolStripMenuItem";
+            restaurareBinarToolStripMenuItem.Size = new Size(319, 44);
+            restaurareBinarToolStripMenuItem.Text = "Restaurare Binar";
+            restaurareBinarToolStripMenuItem.Click += restaurareBinarToolStripMenuItem_Click;
+            // 
+            // restaurareXMLToolStripMenuItem
+            // 
+            restaurareXMLToolStripMenuItem.Name = "restaurareXMLToolStripMenuItem";
+            restaurareXMLToolStripMenuItem.Size = new Size(319, 44);
+            restaurareXMLToolStripMenuItem.Text = "Restaurare XML";
+            restaurareXMLToolStripMenuItem.Click += restaurareXMLToolStripMenuItem_Click;
+            // 
             // claseToolStripMenuItem
             // 
-            claseToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { adaugaToolStripMenuItem1, editeazaToolStripMenuItem, stergeToolStripMenuItem1 });
+            claseToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { adaugaToolStripMenuItem1, editeazaToolStripMenuItem, stergeToolStripMenuItem1, fisiereToolStripMenuItem });
             claseToolStripMenuItem.Name = "claseToolStripMenuItem";
-            claseToolStripMenuItem.Size = new Size(47, 22);
+            claseToolStripMenuItem.Size = new Size(90, 38);
             claseToolStripMenuItem.Text = "Clase";
             // 
             // adaugaToolStripMenuItem1
             // 
             adaugaToolStripMenuItem1.Name = "adaugaToolStripMenuItem1";
-            adaugaToolStripMenuItem1.Size = new Size(117, 22);
+            adaugaToolStripMenuItem1.Size = new Size(359, 44);
             adaugaToolStripMenuItem1.Text = "Adauga";
             adaugaToolStripMenuItem1.Click += adaugaToolStripMenuItem1_Click;
             // 
             // editeazaToolStripMenuItem
             // 
             editeazaToolStripMenuItem.Name = "editeazaToolStripMenuItem";
-            editeazaToolStripMenuItem.Size = new Size(117, 22);
+            editeazaToolStripMenuItem.Size = new Size(359, 44);
             editeazaToolStripMenuItem.Text = "Editeaza";
             editeazaToolStripMenuItem.Click += editeazaToolStripMenuItem_Click;
             // 
             // stergeToolStripMenuItem1
             // 
             stergeToolStripMenuItem1.Name = "stergeToolStripMenuItem1";
-            stergeToolStripMenuItem1.Size = new Size(117, 22);
+            stergeToolStripMenuItem1.Size = new Size(359, 44);
             stergeToolStripMenuItem1.Text = "Sterge";
             stergeToolStripMenuItem1.Click += stergeToolStripMenuItem1_Click;
             // 
+            // fisiereToolStripMenuItem
+            // 
+            fisiereToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { salvareBinarToolStripMenuItem1, salvareXMLToolStripMenuItem1, restaurareBinarToolStripMenuItem1, restaurareXMLToolStripMenuItem1 });
+            fisiereToolStripMenuItem.Name = "fisiereToolStripMenuItem";
+            fisiereToolStripMenuItem.Size = new Size(359, 44);
+            fisiereToolStripMenuItem.Text = "Fisiere";
+            // 
+            // salvareBinarToolStripMenuItem1
+            // 
+            salvareBinarToolStripMenuItem1.Name = "salvareBinarToolStripMenuItem1";
+            salvareBinarToolStripMenuItem1.Size = new Size(359, 44);
+            salvareBinarToolStripMenuItem1.Text = "Salvare Binar";
+            salvareBinarToolStripMenuItem1.Click += salvareBinarToolStripMenuItem1_Click;
+            // 
+            // salvareXMLToolStripMenuItem1
+            // 
+            salvareXMLToolStripMenuItem1.Name = "salvareXMLToolStripMenuItem1";
+            salvareXMLToolStripMenuItem1.Size = new Size(359, 44);
+            salvareXMLToolStripMenuItem1.Text = "Salvare XML";
+            salvareXMLToolStripMenuItem1.Click += salvareXMLToolStripMenuItem1_Click;
+            // 
+            // restaurareBinarToolStripMenuItem1
+            // 
+            restaurareBinarToolStripMenuItem1.Name = "restaurareBinarToolStripMenuItem1";
+            restaurareBinarToolStripMenuItem1.Size = new Size(359, 44);
+            restaurareBinarToolStripMenuItem1.Text = "Restaurare Binar";
+            restaurareBinarToolStripMenuItem1.Click += restaurareBinarToolStripMenuItem1_Click;
+            // 
+            // restaurareXMLToolStripMenuItem1
+            // 
+            restaurareXMLToolStripMenuItem1.Name = "restaurareXMLToolStripMenuItem1";
+            restaurareXMLToolStripMenuItem1.Size = new Size(359, 44);
+            restaurareXMLToolStripMenuItem1.Text = "Restaurare XML";
+            restaurareXMLToolStripMenuItem1.Click += restaurareXMLToolStripMenuItem1_Click;
+            // 
             // tbTitluClase
             // 
-            tbTitluClase.Location = new Point(493, 25);
-            tbTitluClase.Margin = new Padding(2, 1, 2, 1);
+            tbTitluClase.Location = new Point(916, 53);
+            tbTitluClase.Margin = new Padding(4, 2, 4, 2);
             tbTitluClase.Name = "tbTitluClase";
-            tbTitluClase.Size = new Size(453, 23);
+            tbTitluClase.Size = new Size(838, 39);
             tbTitluClase.TabIndex = 3;
             tbTitluClase.Text = "                                           Lista Clase";
             // 
@@ -227,10 +306,10 @@
             lvClase.Columns.AddRange(new ColumnHeader[] { Clasa, Descriere, Profesor, Credite });
             lvClase.ContextMenuStrip = contextMenuStripClase;
             lvClase.FullRowSelect = true;
-            lvClase.Location = new Point(495, 46);
-            lvClase.Margin = new Padding(2, 1, 2, 1);
+            lvClase.Location = new Point(919, 98);
+            lvClase.Margin = new Padding(4, 2, 4, 2);
             lvClase.Name = "lvClase";
-            lvClase.Size = new Size(450, 200);
+            lvClase.Size = new Size(832, 422);
             lvClase.TabIndex = 4;
             lvClase.Tag = "";
             lvClase.UseCompatibleStateImageBehavior = false;
@@ -257,42 +336,42 @@
             contextMenuStripClase.ImageScalingSize = new Size(32, 32);
             contextMenuStripClase.Items.AddRange(new ToolStripItem[] { adaugaToolStripMenuItem3, editeazaToolStripMenuItem2, stergeToolStripMenuItem3 });
             contextMenuStripClase.Name = "contextMenuStripClase";
-            contextMenuStripClase.Size = new Size(181, 92);
+            contextMenuStripClase.Size = new Size(177, 118);
             contextMenuStripClase.Opening += contextMenuStripClase_Opening;
             // 
             // adaugaToolStripMenuItem3
             // 
             adaugaToolStripMenuItem3.Name = "adaugaToolStripMenuItem3";
-            adaugaToolStripMenuItem3.Size = new Size(180, 22);
+            adaugaToolStripMenuItem3.Size = new Size(176, 38);
             adaugaToolStripMenuItem3.Text = "Adauga";
             adaugaToolStripMenuItem3.Click += adaugaToolStripMenuItem3_Click;
             // 
             // editeazaToolStripMenuItem2
             // 
             editeazaToolStripMenuItem2.Name = "editeazaToolStripMenuItem2";
-            editeazaToolStripMenuItem2.Size = new Size(180, 22);
+            editeazaToolStripMenuItem2.Size = new Size(176, 38);
             editeazaToolStripMenuItem2.Text = "Editeaza";
             editeazaToolStripMenuItem2.Click += editeazaToolStripMenuItem2_Click;
             // 
             // stergeToolStripMenuItem3
             // 
             stergeToolStripMenuItem3.Name = "stergeToolStripMenuItem3";
-            stergeToolStripMenuItem3.Size = new Size(180, 22);
+            stergeToolStripMenuItem3.Size = new Size(176, 38);
             stergeToolStripMenuItem3.Text = "Sterge";
             stergeToolStripMenuItem3.Click += stergeToolStripMenuItem3_Click;
             // 
             // Form1
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1020, 434);
+            ClientSize = new Size(1894, 926);
             Controls.Add(lvClase);
             Controls.Add(tbTitluClase);
             Controls.Add(tbTitluStudenti);
             Controls.Add(lvStudenti);
             Controls.Add(navBarApp);
             MainMenuStrip = navBarApp;
-            Margin = new Padding(2, 1, 2, 1);
+            Margin = new Padding(4, 2, 4, 2);
             Name = "Form1";
             Text = "A";
             contextMenuStripStudenti.ResumeLayout(false);
@@ -337,5 +416,15 @@
         private ToolStripMenuItem adaugaToolStripMenuItem3;
         private ToolStripMenuItem editeazaToolStripMenuItem2;
         private ToolStripMenuItem stergeToolStripMenuItem3;
+        private ToolStripMenuItem fisierToolStripMenuItem;
+        private ToolStripMenuItem salvareBinarToolStripMenuItem;
+        private ToolStripMenuItem salvareXMLToolStripMenuItem;
+        private ToolStripMenuItem restaurareBinarToolStripMenuItem;
+        private ToolStripMenuItem restaurareXMLToolStripMenuItem;
+        private ToolStripMenuItem fisiereToolStripMenuItem;
+        private ToolStripMenuItem salvareBinarToolStripMenuItem1;
+        private ToolStripMenuItem salvareXMLToolStripMenuItem1;
+        private ToolStripMenuItem restaurareBinarToolStripMenuItem1;
+        private ToolStripMenuItem restaurareXMLToolStripMenuItem1;
     }
 }

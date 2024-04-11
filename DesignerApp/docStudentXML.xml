@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfStudent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Student>
+    <familyName>Popescu</familyName>
+    <givenName>Ion</givenName>
+    <dateOfBirth>2000-04-25T00:00:00</dateOfBirth>
+    <email>ion.popescu@example.com</email>
+    <address>Strada Principala, Nr. 1, Bucuresti</address>
+    <gender>77</gender>
+    <phoneNumber>0700000001</phoneNumber>
+    <yearOfStudy>1</yearOfStudy>
+    <university>Universitatea Bucuresti</university>
+    <faculty>Facultatea de Matematica si Informatica</faculty>
+    <programOfStudy>Informatica</programOfStudy>
+    <enrollmentStatusStudent>ACTIV</enrollmentStatusStudent>
+    <enrollmentDate>2024-04-11T16:54:46.7890319+03:00</enrollmentDate>
+    <mean>9.5</mean>
+    <FamilyName>Popescu</FamilyName>
+    <GivenName>Ion</GivenName>
+    <DateOfBirth>2000-04-25T00:00:00</DateOfBirth>
+    <Email>ion.popescu@example.com</Email>
+    <Address>Strada Principala, Nr. 1, Bucuresti</Address>
+    <Gender>77</Gender>
+    <PhoneNumber>0700000001</PhoneNumber>
+    <YearOfStudy>1</YearOfStudy>
+    <University>Universitatea Bucuresti</University>
+    <Faculty>Facultatea de Matematica si Informatica</Faculty>
+    <ProgramOfStudy>Informatica</ProgramOfStudy>
+    <EnrollmentStatusStudent>ACTIV</EnrollmentStatusStudent>
+    <EnrollmentDate>2024-04-11T16:54:46.7890319+03:00</EnrollmentDate>
+    <Mean>9.5</Mean>
+  </Student>
+  <Student>
+    <familyName>Ionescu</familyName>
+    <givenName>Maria</givenName>
+    <dateOfBirth>1999-07-15T00:00:00</dateOfBirth>
+    <email>maria.ionescu@example.com</email>
+    <address>Strada Libertatii, Nr. 4, Cluj-Napoca</address>
+    <gender>70</gender>
+    <phoneNumber>0700000002</phoneNumber>
+    <yearOfStudy>2</yearOfStudy>
+    <university>Universitatea Babes-Bolyai</university>
+    <faculty>Facultatea de Istorie</faculty>
+    <programOfStudy>Istorie</programOfStudy>
+    <enrollmentStatusStudent>ACTIV</enrollmentStatusStudent>
+    <enrollmentDate>2024-04-11T16:54:46.7912702+03:00</enrollmentDate>
+    <mean>9.7</mean>
+    <FamilyName>Ionescu</FamilyName>
+    <GivenName>Maria</GivenName>
+    <DateOfBirth>1999-07-15T00:00:00</DateOfBirth>
+    <Email>maria.ionescu@example.com</Email>
+    <Address>Strada Libertatii, Nr. 4, Cluj-Napoca</Address>
+    <Gender>70</Gender>
+    <PhoneNumber>0700000002</PhoneNumber>
+    <YearOfStudy>2</YearOfStudy>
+    <University>Universitatea Babes-Bolyai</University>
+    <Faculty>Facultatea de Istorie</Faculty>
+    <ProgramOfStudy>Istorie</ProgramOfStudy>
+    <EnrollmentStatusStudent>ACTIV</EnrollmentStatusStudent>
+    <EnrollmentDate>2024-04-11T16:54:46.7912702+03:00</EnrollmentDate>
+    <Mean>9.7</Mean>
+  </Student>
+  <Student>
+    <familyName>Vasilescu</familyName>
+    <givenName>Andrei</givenName>
+    <dateOfBirth>2001-11-05T00:00:00</dateOfBirth>
+    <email>andrei.vasilescu@example.com</email>
+    <address>Strada Secundara, Nr. 10, Iasi</address>
+    <gender>77</gender>
+    <phoneNumber>0700000003</phoneNumber>
+    <yearOfStudy>1</yearOfStudy>
+    <university>Universitatea Alexandru Ioan Cuza</university>
+    <faculty>Facultatea de Filosofie si Stiinte Social-Politice</faculty>
+    <programOfStudy>Sociologie</programOfStudy>
+    <enrollmentStatusStudent>GRADUATED</enrollmentStatusStudent>
+    <enrollmentDate>2024-04-11T16:54:46.7912714+03:00</enrollmentDate>
+    <mean>8.9</mean>
+    <FamilyName>Vasilescu</FamilyName>
+    <GivenName>Andrei</GivenName>
+    <DateOfBirth>2001-11-05T00:00:00</DateOfBirth>
+    <Email>andrei.vasilescu@example.com</Email>
+    <Address>Strada Secundara, Nr. 10, Iasi</Address>
+    <Gender>77</Gender>
+    <PhoneNumber>0700000003</PhoneNumber>
+    <YearOfStudy>1</YearOfStudy>
+    <University>Universitatea Alexandru Ioan Cuza</University>
+    <Faculty>Facultatea de Filosofie si Stiinte Social-Politice</Faculty>
+    <ProgramOfStudy>Sociologie</ProgramOfStudy>
+    <EnrollmentStatusStudent>GRADUATED</EnrollmentStatusStudent>
+    <EnrollmentDate>2024-04-11T16:54:46.7912714+03:00</EnrollmentDate>
+    <Mean>8.9</Mean>
+  </Student>
+</ArrayOfStudent>

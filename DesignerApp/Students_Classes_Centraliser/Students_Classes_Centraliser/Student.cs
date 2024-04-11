@@ -13,6 +13,7 @@ namespace Students_Classes_Centraliser
         EXMATRICULATED,
         GRADUATED
     }
+    [Serializable]
     public class Student
     {
         public static int NUMBER_OF_STUDENTS_IN_DB = 100;

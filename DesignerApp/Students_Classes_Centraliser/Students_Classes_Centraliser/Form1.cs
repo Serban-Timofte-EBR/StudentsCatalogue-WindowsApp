@@ -1,3 +1,7 @@
+using System.Runtime.Serialization;
+using System.Runtime.Serialization.Formatters.Binary;
+using System.Xml.Serialization;
+
 namespace Students_Classes_Centraliser
 {
     public partial class Form1 : Form
@@ -359,6 +363,226 @@ namespace Students_Classes_Centraliser
                 adaugaToolStripMenuItem2.Enabled = true;
                 editeazaToolStripMenuItem2.Enabled = false;
                 stergeToolStripMenuItem3.Enabled = false;
+            }
+        }
+
+        private void salvareBinarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog fd = new SaveFileDialog();
+            fd.Filter = "fisier studenti (*stud) | *.stud";
+            fd.CheckPathExists = true;
+
+            if (fd.ShowDialog() == DialogResult.OK)
+            {
+                List<Student> lista = new List<Student>();
+                foreach (ListViewItem item in lvStudenti.Items)
+                {
+                    lista.Add((Student)item.Tag);
+                }
+
+                BinaryFormatter serialiazer = new BinaryFormatter();
+                Stream fisier = File.Create(fd.FileName);
+                serialiazer.Serialize(fisier, lista);
+                fisier.Close();
+            }
+        }
+
+        private void restaurareBinarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog ofd = new OpenFileDialog();
+            ofd.Filter = "fisier studenti (*stud) | *.stud";
+            ofd.CheckFileExists = true;
+
+            if (ofd.ShowDialog() == DialogResult.OK)
+            {
+                List<Student> lista = new List<Student>();
+
+                Stream fisier = File.OpenRead(ofd.FileName);
+                BinaryFormatter serializer = new BinaryFormatter();
+                lista.AddRange((List<Student>)serializer.Deserialize(fisier));
+
+                if (lvStudenti.Items.Count > 0)
+                {
+                    if (MessageBox.Show("Sunt stundeti in lista. Doriti sa stergeti lista existenta?", "Warning",
+                        MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    {
+                        lvStudenti.Items.Clear();
+                    }
+
+                    foreach (Student stud in lista)
+                    {
+                        ListViewItem item = new ListViewItem(new string[]
+                        {
+                            stud.FamilyName, stud.GivenName, stud.DateOfBirth.ToString(), stud.Email, stud.EnrollmentStatusStudent.ToString(),
+                            stud.yearOfStudy.ToString(), stud.ProgramOfStudy
+                        });
+                        item.Tag = stud;
+                        lvStudenti.Items.Add(item);
+                    }
+                }
+                fisier.Close();
+            }
+        }
+
+        private void salvareXMLToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog fd = new SaveFileDialog();
+            fd.Filter = "salvare xml | *.xml";
+            fd.CheckPathExists = true;
+
+            if (fd.ShowDialog() == DialogResult.OK)
+            {
+                List<Student> lista = new List<Student>();
+                foreach (ListViewItem item in lvStudenti.Items)
+                {
+                    lista.Add((Student)item.Tag);
+                }
+
+                XmlSerializer serializer = new XmlSerializer(typeof(List<Student>));
+                Stream fisier = File.Create(fd.FileName);
+                serializer.Serialize(fisier, lista);
+                MessageBox.Show("Lista de studenti a fost serializata in format XML");
+                fisier.Close();
+            }
+        }
+
+        private void restaurareXMLToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog fd = new OpenFileDialog();
+            fd.Filter = "fisier xml | *.xml";
+            fd.CheckPathExists = true;
+
+            if (fd.ShowDialog() == DialogResult.OK)
+            {
+                Stream fisier = File.OpenRead(fd.FileName);
+                XmlSerializer serializer = new XmlSerializer(typeof(List<Student>));
+                List<Student> lista = (List<Student>)serializer.Deserialize(fisier);
+
+                if (lvStudenti.Items.Count > 0)
+                {
+                    if (MessageBox.Show("Vrei sa stergi inregistrarile din lista?", "Warning",
+                        MessageBoxButtons.YesNoCancel) == DialogResult.Yes)
+                    {
+                        lvStudenti.Items.Clear();
+                    }
+                    foreach (Student stud in lista)
+                    {
+                        ListViewItem lvi = new ListViewItem(new string[] {
+                            stud.FamilyName, stud.GivenName, stud.DateOfBirth.ToString(), stud.Email, stud.EnrollmentStatusStudent.ToString(),
+                            stud.yearOfStudy.ToString(), stud.ProgramOfStudy
+                        });
+                        lvi.Tag = stud;
+                        lvStudenti.Items.Add(lvi);
+                    }
+                }
+                fisier.Close();
+            }
+        }
+
+        private void salvareBinarToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog fd = new SaveFileDialog();
+            fd.Filter = "fisiere clase .clasa | *.clasa";
+            fd.CheckPathExists = true;
+
+            if (fd.ShowDialog() == DialogResult.OK)
+            {
+                List<UnivClass> lista = new List<UnivClass>();
+                foreach (ListViewItem item in lvClase.Items)
+                {
+                    lista.Add((UnivClass)item.Tag);
+                }
+
+                Stream fisier = File.Create(fd.FileName);
+                BinaryFormatter serializer = new BinaryFormatter();
+                serializer.Serialize(fisier, lista);
+                MessageBox.Show("Lista de clase a fost serializata!");
+                fisier.Close();
+            }
+        }
+
+        private void restaurareBinarToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog fd = new OpenFileDialog();
+            fd.Filter = "fisiere clase .clasa | *.clasa";
+            fd.CheckFileExists = true;
+
+            if (fd.ShowDialog() == DialogResult.OK)
+            {
+                Stream fisier = File.OpenRead(fd.FileName);
+                BinaryFormatter serializer = new BinaryFormatter();
+                List<UnivClass> lista = (List<UnivClass>)serializer.Deserialize(fisier);
+
+                if (lvClase.Items.Count > 0)
+                {
+                    if (MessageBox.Show("Sunt stundeti in lista. Doriti sa stergeti lista existenta?", "Warning",
+                        MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    {
+                        lvClase.Items.Clear();
+                    }
+                }
+
+                foreach (UnivClass clasa in lista)
+                {
+                    ListViewItem item = new ListViewItem(new string[]
+                    {
+                            clasa.UnivClassName, clasa.Description, clasa.ProfessorName, clasa.Credits.ToString()
+                    });
+                    item.Tag = clasa;
+                    lvClase.Items.Add(item);
+                }
+            }
+        }
+
+        private void salvareXMLToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog fd = new SaveFileDialog();
+            fd.Filter = "fisier XML | *.xml";
+            fd.CheckPathExists = true;
+
+            if (fd.ShowDialog() == DialogResult.OK)
+            {
+                List<UnivClass> lista = new List<UnivClass>();
+                foreach (ListViewItem item in lvClase.Items)
+                {
+                    lista.Add((UnivClass)item.Tag);
+                }
+
+                XmlSerializer serializer = new XmlSerializer(typeof(List<UnivClass>));
+                Stream fisier = File.Create(fd.FileName);
+                serializer.Serialize(fisier, lista);
+                fisier.Close();
+            }
+        }
+
+        private void restaurareXMLToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog fd = new OpenFileDialog();
+            fd.Filter = "fisier xml | *.xml";
+            fd.CheckFileExists = true;
+
+            if(fd.ShowDialog() == DialogResult.OK )
+            {
+                Stream fisier = File.OpenRead(fd.FileName);
+                XmlSerializer serializer = new XmlSerializer (typeof(List<UnivClass>));
+                List<UnivClass> lista = (List<UnivClass>)serializer.Deserialize(fisier);
+
+                if (MessageBox.Show("Sunt clase in lista. Doriti sa stergeti lista existenta?", "Warning",
+                        MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    lvClase.Items.Clear();
+                }
+
+                foreach(UnivClass c in lista)
+                {
+                    ListViewItem item = new ListViewItem(new string[]
+                    {
+                        c.UnivClassName, c.Description, c.ProfessorName, c.Credits.ToString()
+                    });
+                    item.Tag = c;
+                    lvClase.Items.Add(item);
+                }
+                fisier.Close();
             }
         }
     }

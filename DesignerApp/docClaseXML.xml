@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfUnivClass xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <UnivClass>
+    <univClassId>1</univClassId>
+    <univClassName>PAW</univClassName>
+    <description>C# and Windows Forms</description>
+    <proffesorName>Prof. Dr. Ion Ionescu</proffesorName>
+    <credits>5</credits>
+    <UnivClassName>PAW</UnivClassName>
+    <Description>C# and Windows Forms</Description>
+    <ProfessorName>Prof. Dr. Ion Ionescu</ProfessorName>
+    <Credits>5</Credits>
+  </UnivClass>
+  <UnivClass>
+    <univClassId>2</univClassId>
+    <univClassName>SDD</univClassName>
+    <description>Implementing data structures in C</description>
+    <proffesorName>Prof. Dr. Struct Structurescu</proffesorName>
+    <credits>4</credits>
+    <UnivClassName>SDD</UnivClassName>
+    <Description>Implementing data structures in C</Description>
+    <ProfessorName>Prof. Dr. Struct Structurescu</ProfessorName>
+    <Credits>4</Credits>
+  </UnivClass>
+  <UnivClass>
+    <univClassId>3</univClassId>
+    <univClassName>MRAI</univClassName>
+    <description>Risk management</description>
+    <proffesorName>Prof. Dr. Risculescovici Riscovici</proffesorName>
+    <credits>3</credits>
+    <UnivClassName>MRAI</UnivClassName>
+    <Description>Risk management</Description>
+    <ProfessorName>Prof. Dr. Risculescovici Riscovici</ProfessorName>
+    <Credits>3</Credits>
+  </UnivClass>
+</ArrayOfUnivClass>

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Students_Classes_Centraliser
 {
+    [Serializable]
     public class UnivClass
     {
         public static int NUMBER_OF_CLASSES_IN_DB = 0;
