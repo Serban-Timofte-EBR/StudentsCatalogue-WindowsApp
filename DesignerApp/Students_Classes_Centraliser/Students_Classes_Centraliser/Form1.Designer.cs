@@ -71,7 +71,7 @@
             adaugaToolStripMenuItem3 = new ToolStripMenuItem();
             editeazaToolStripMenuItem2 = new ToolStripMenuItem();
             stergeToolStripMenuItem3 = new ToolStripMenuItem();
-            treeView1 = new TreeView();
+            twClaseStudenti = new TreeView();
             contextMenuStripStudenti.SuspendLayout();
             navBarApp.SuspendLayout();
             contextMenuStripClase.SuspendLayout();
@@ -89,6 +89,7 @@
             lvStudenti.TabIndex = 0;
             lvStudenti.UseCompatibleStateImageBehavior = false;
             lvStudenti.View = View.Details;
+            lvStudenti.Click += lvStudenti_Click;
             // 
             // Nume
             // 
@@ -315,6 +316,7 @@
             lvClase.Tag = "";
             lvClase.UseCompatibleStateImageBehavior = false;
             lvClase.View = View.Details;
+            lvClase.Click += lvClase_Click;
             // 
             // Clasa
             // 
@@ -361,19 +363,20 @@
             stergeToolStripMenuItem3.Text = "Sterge";
             stergeToolStripMenuItem3.Click += stergeToolStripMenuItem3_Click;
             // 
-            // treeView1
+            // twClaseStudenti
             // 
-            treeView1.Location = new Point(452, 560);
-            treeView1.Name = "treeView1";
-            treeView1.Size = new Size(876, 447);
-            treeView1.TabIndex = 5;
+            twClaseStudenti.Location = new Point(452, 560);
+            twClaseStudenti.Name = "twClaseStudenti";
+            twClaseStudenti.Size = new Size(876, 447);
+            twClaseStudenti.TabIndex = 5;
+            twClaseStudenti.KeyPress += twClaseStudenti_KeyPress;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1894, 1054);
-            Controls.Add(treeView1);
+            Controls.Add(twClaseStudenti);
             Controls.Add(lvClase);
             Controls.Add(tbTitluClase);
             Controls.Add(tbTitluStudenti);
@@ -435,6 +438,6 @@
         private ToolStripMenuItem salvareXMLToolStripMenuItem1;
         private ToolStripMenuItem restaurareBinarToolStripMenuItem1;
         private ToolStripMenuItem restaurareXMLToolStripMenuItem1;
-        private TreeView treeView1;
+        private TreeView twClaseStudenti;
     }
 }

@@ -128,6 +128,18 @@ namespace Students_Classes_Centraliser
 
             lvClasa3.Tag = mraiClass;
             lvClase.Items.Add(lvClasa3);
+
+            TreeNode nodePAW = new TreeNode(pawClass.UnivClassName + " - " + pawClass.ProfessorName);
+            nodePAW.Tag = pawClass;
+            twClaseStudenti.Nodes.Add(nodePAW);
+
+            TreeNode nodeSDD = new TreeNode(sddClass.UnivClassName + " - " + sddClass.ProfessorName);
+            nodeSDD.Tag = sddClass;
+            twClaseStudenti.Nodes.Add(nodeSDD);
+
+            TreeNode nodeMRAI = new TreeNode(mraiClass.UnivClassName + " - " + mraiClass.ProfessorName);
+            nodeMRAI.Tag = mraiClass;
+            twClaseStudenti.Nodes.Add(nodeMRAI);
         }
 
         private void adaugaToolStripMenuItem_Click(object sender, EventArgs e)
@@ -585,5 +597,71 @@ namespace Students_Classes_Centraliser
                 fisier.Close();
             }
         }
+
+       
+
+        private void twClaseStudenti_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (lvClase.Items.Count > 0)
+            {
+                lvClase.DoDragDrop(lvClase.SelectedItems[0].Tag as UnivClass, DragDropEffects.Copy);
+            }
+        }
+
+        private void twClaseStudenti_DragDrop(object sender, DragEventArgs e)
+        {
+            Point punct = new Point(e.X, e.Y);
+            Point punctDinTree = twClaseStudenti.PointToClient(punct);
+        }
+
+        private void lvClase_Click(object sender, EventArgs e)
+        {
+            if (lvClase.SelectedItems.Count > 0)
+            {
+                UnivClass selectedClass = lvClase.SelectedItems[0].Tag as UnivClass;
+                string textToCopy = $"Class:{selectedClass.UnivClassName} - {selectedClass.ProfessorName}";
+                Clipboard.SetText(textToCopy);
+            }
+        }
+
+        private void lvStudenti_Click(object sender, EventArgs e)
+        {
+            if (lvStudenti.SelectedItems.Count > 0)
+            {
+                Student selectedStudent = (Student)lvStudenti.SelectedItems[0].Tag;
+                string textToCopy = $"Student:{selectedStudent.GivenName} {selectedStudent.FamilyName} - {selectedStudent.Mean}";
+                Clipboard.SetText(textToCopy);
+            }
+        }
+
+        private void twClaseStudenti_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 'V' || e.KeyChar == 'v')
+            {
+                if (Clipboard.ContainsText())
+                {
+                    string clipboardText = Clipboard.GetText();
+                    if (clipboardText.StartsWith("Student:"))
+                    {
+                        string nodeText = clipboardText.Substring("Student:".Length);
+                        if (twClaseStudenti.SelectedNode != null)
+                        {
+                            twClaseStudenti.SelectedNode.Nodes.Add(new TreeNode(nodeText));
+                            twClaseStudenti.SelectedNode.Expand();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Selecteaza o clasa la care sa adaugi ");
+                        }
+                    }
+                    else if (clipboardText.StartsWith("Class:"))
+                    {
+                        string nodeText = clipboardText.Substring("Class:".Length);
+                        twClaseStudenti.Nodes.Add(new TreeNode(nodeText));
+                    }
+                }
+            }
+        }
+
     }
 }
