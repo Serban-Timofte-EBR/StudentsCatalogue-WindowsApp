@@ -90,6 +90,7 @@
             lvStudenti.UseCompatibleStateImageBehavior = false;
             lvStudenti.View = View.Details;
             lvStudenti.Click += lvStudenti_Click;
+            lvStudenti.MouseDown += lvStudenti_MouseDown;
             // 
             // Nume
             // 
@@ -366,6 +367,7 @@
             // 
             // twClaseStudenti
             // 
+            twClaseStudenti.AllowDrop = true;
             twClaseStudenti.Location = new Point(452, 560);
             twClaseStudenti.Name = "twClaseStudenti";
             twClaseStudenti.Size = new Size(876, 447);

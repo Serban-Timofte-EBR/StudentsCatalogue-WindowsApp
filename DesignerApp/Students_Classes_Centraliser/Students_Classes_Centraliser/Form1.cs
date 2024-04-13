@@ -675,6 +675,8 @@ namespace Students_Classes_Centraliser
         {
             if (e.Data.GetDataPresent(typeof(UnivClass)))
                 e.Effect = DragDropEffects.Copy;
+            else if (e.Data.GetDataPresent(typeof(Student)))
+                e.Effect = DragDropEffects.Copy;
             else
                 e.Effect = DragDropEffects.None;
         }
@@ -688,7 +690,30 @@ namespace Students_Classes_Centraliser
                 t.Tag = c;
                 twClaseStudenti.Nodes.Add(t);
             }
+            else if(e.Effect == DragDropEffects.Copy && e.Data.GetDataPresent(typeof(Student)))
+            {
+                Point punct = new Point(e.X, e.Y);
+                Point punctTree = twClaseStudenti.PointToClient(punct);
+                TreeNode t = twClaseStudenti.GetNodeAt(punctTree);
+
+                if( !(t == null) && e.Effect == DragDropEffects.Copy &&
+                    e.Data.GetDataPresent(typeof(Student)))
+                { 
+                    Student s = (Student)e.Data.GetData(typeof(Student));
+                    TreeNode tn = new TreeNode(s.GivenName + " " + s.FamilyName + " - " + s.Mean);
+                    tn.Tag = s;
+                    t.Nodes.Add(tn);
+                    t.Expand();
+                }
+            }
         }
 
+        private void lvStudenti_MouseDown(object sender, MouseEventArgs e)
+        {
+            if(lvStudenti.SelectedItems.Count > 0)
+            {
+                lvStudenti.DoDragDrop((Student)lvStudenti.SelectedItems[0].Tag, DragDropEffects.Copy);
+            }
+        }
     }
 }
