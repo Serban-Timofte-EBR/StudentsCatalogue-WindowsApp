@@ -317,6 +317,7 @@
             lvClase.UseCompatibleStateImageBehavior = false;
             lvClase.View = View.Details;
             lvClase.Click += lvClase_Click;
+            lvClase.MouseDown += lvClase_MouseDown;
             // 
             // Clasa
             // 
@@ -369,6 +370,8 @@
             twClaseStudenti.Name = "twClaseStudenti";
             twClaseStudenti.Size = new Size(876, 447);
             twClaseStudenti.TabIndex = 5;
+            twClaseStudenti.DragDrop += twClaseStudenti_DragDrop_1;
+            twClaseStudenti.DragEnter += twClaseStudenti_DragEnter;
             twClaseStudenti.KeyPress += twClaseStudenti_KeyPress;
             // 
             // Form1

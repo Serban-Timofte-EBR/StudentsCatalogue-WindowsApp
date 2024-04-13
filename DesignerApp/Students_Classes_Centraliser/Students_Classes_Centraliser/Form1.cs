@@ -598,7 +598,7 @@ namespace Students_Classes_Centraliser
             }
         }
 
-       
+
 
         private void twClaseStudenti_MouseDown(object sender, MouseEventArgs e)
         {
@@ -660,6 +660,33 @@ namespace Students_Classes_Centraliser
                         twClaseStudenti.Nodes.Add(new TreeNode(nodeText));
                     }
                 }
+            }
+        }
+        private void lvClase_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (lvClase.SelectedItems.Count > 0)
+            {
+                lvClase.DoDragDrop((UnivClass)lvClase.SelectedItems[0].Tag,
+                    DragDropEffects.Copy);
+            }
+        }
+
+        private void twClaseStudenti_DragEnter(object sender, DragEventArgs e)
+        {
+            if (e.Data.GetDataPresent(typeof(UnivClass)))
+                e.Effect = DragDropEffects.Copy;
+            else
+                e.Effect = DragDropEffects.None;
+        }
+
+        private void twClaseStudenti_DragDrop_1(object sender, DragEventArgs e)
+        {
+            if (e.Effect == DragDropEffects.Copy && e.Data.GetDataPresent(typeof(UnivClass)))
+            {
+                UnivClass c = (UnivClass)e.Data.GetData(typeof(UnivClass));
+                TreeNode t = new TreeNode(c.univClassName + " - " + c.ProfessorName);
+                t.Tag = c;
+                twClaseStudenti.Nodes.Add(t);
             }
         }
 
