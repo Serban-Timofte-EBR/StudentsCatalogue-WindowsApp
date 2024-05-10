@@ -1,0 +1,162 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "\\\\Mac\\Home\\Documents\\Codes\uF028\\StudentsCatalogue-WindowsApp\\DesignerApp\\Students_Classes_Centraliser\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{84E02806-B7A1-41C0-8A8F-01FAA43E15F5}|Students_Classes_Centraliser\\Students_Classes_Centraliser.csproj|\\\\mac\\home\\documents\\codes\uF028\\studentscatalogue-windowsapp\\designerapp\\students_classes_centraliser\\students_classes_centraliser\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{84E02806-B7A1-41C0-8A8F-01FAA43E15F5}|Students_Classes_Centraliser\\Students_Classes_Centraliser.csproj|\\\\mac\\home\\documents\\codes\uF028\\studentscatalogue-windowsapp\\designerapp\\students_classes_centraliser\\students_classes_centraliser\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{84E02806-B7A1-41C0-8A8F-01FAA43E15F5}|Students_Classes_Centraliser\\Students_Classes_Centraliser.csproj|\\\\mac\\home\\documents\\codes\uF028\\studentscatalogue-windowsapp\\designerapp\\students_classes_centraliser\\students_classes_centraliser\\univclass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{84E02806-B7A1-41C0-8A8F-01FAA43E15F5}|Students_Classes_Centraliser\\Students_Classes_Centraliser.csproj|\\\\mac\\home\\documents\\codes\uF028\\studentscatalogue-windowsapp\\designerapp\\students_classes_centraliser\\students_classes_centraliser\\student.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{84E02806-B7A1-41C0-8A8F-01FAA43E15F5}|Students_Classes_Centraliser\\Students_Classes_Centraliser.csproj|\\\\mac\\home\\documents\\codes\uF028\\studentscatalogue-windowsapp\\designerapp\\students_classes_centraliser\\students_classes_centraliser\\adaugastudent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{84E02806-B7A1-41C0-8A8F-01FAA43E15F5}|Students_Classes_Centraliser\\Students_Classes_Centraliser.csproj|\\\\mac\\home\\documents\\codes\uF028\\studentscatalogue-windowsapp\\designerapp\\students_classes_centraliser\\students_classes_centraliser\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{84E02806-B7A1-41C0-8A8F-01FAA43E15F5}|Students_Classes_Centraliser\\Students_Classes_Centraliser.csproj|\\\\mac\\home\\documents\\codes\uF028\\studentscatalogue-windowsapp\\designerapp\\students_classes_centraliser\\students_classes_centraliser\\adaugaclasa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{84E02806-B7A1-41C0-8A8F-01FAA43E15F5}|Students_Classes_Centraliser\\Students_Classes_Centraliser.csproj|\\\\mac\\home\\documents\\codes\uF028\\studentscatalogue-windowsapp\\designerapp\\students_classes_centraliser\\students_classes_centraliser\\adaugaclasa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{84E02806-B7A1-41C0-8A8F-01FAA43E15F5}|Students_Classes_Centraliser\\Students_Classes_Centraliser.csproj|\\\\mac\\home\\documents\\codes\uF028\\studentscatalogue-windowsapp\\designerapp\\students_classes_centraliser\\students_classes_centraliser\\adaugastudent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Form1.cs [Design]",
+              "DocumentMoniker": "\\\\Mac\\Home\\Documents\\Codes\uF028\\StudentsCatalogue-WindowsApp\\DesignerApp\\Students_Classes_Centraliser\\Students_Classes_Centraliser\\Form1.cs",
+              "RelativeDocumentMoniker": "Students_Classes_Centraliser\\Form1.cs",
+              "ToolTip": "\\\\Mac\\Home\\Documents\\Codes\uF028\\StudentsCatalogue-WindowsApp\\DesignerApp\\Students_Classes_Centraliser\\Students_Classes_Centraliser\\Form1.cs [Design]",
+              "RelativeToolTip": "Students_Classes_Centraliser\\Form1.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-08T07:42:17.207Z",
+              "IsPinned": true,
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "AdaugaStudent.cs [Design]",
+              "DocumentMoniker": "\\\\Mac\\Home\\Documents\\Codes\uF028\\StudentsCatalogue-WindowsApp\\DesignerApp\\Students_Classes_Centraliser\\Students_Classes_Centraliser\\AdaugaStudent.cs",
+              "RelativeDocumentMoniker": "Students_Classes_Centraliser\\AdaugaStudent.cs",
+              "ToolTip": "\\\\Mac\\Home\\Documents\\Codes\uF028\\StudentsCatalogue-WindowsApp\\DesignerApp\\Students_Classes_Centraliser\\Students_Classes_Centraliser\\AdaugaStudent.cs [Design]",
+              "RelativeToolTip": "Students_Classes_Centraliser\\AdaugaStudent.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-11T18:51:08.06Z",
+              "IsPinned": true,
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "AdaugaClasa.cs [Design]",
+              "DocumentMoniker": "\\\\Mac\\Home\\Documents\\Codes\uF028\\StudentsCatalogue-WindowsApp\\DesignerApp\\Students_Classes_Centraliser\\Students_Classes_Centraliser\\AdaugaClasa.cs",
+              "RelativeDocumentMoniker": "Students_Classes_Centraliser\\AdaugaClasa.cs",
+              "ToolTip": "\\\\Mac\\Home\\Documents\\Codes\uF028\\StudentsCatalogue-WindowsApp\\DesignerApp\\Students_Classes_Centraliser\\Students_Classes_Centraliser\\AdaugaClasa.cs [Design]",
+              "RelativeToolTip": "Students_Classes_Centraliser\\AdaugaClasa.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-11T18:58:46.536Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "UnivClass.cs",
+              "DocumentMoniker": "\\\\Mac\\Home\\Documents\\Codes\uF028\\StudentsCatalogue-WindowsApp\\DesignerApp\\Students_Classes_Centraliser\\Students_Classes_Centraliser\\UnivClass.cs",
+              "RelativeDocumentMoniker": "Students_Classes_Centraliser\\UnivClass.cs",
+              "ToolTip": "\\\\Mac\\Home\\Documents\\Codes\uF028\\StudentsCatalogue-WindowsApp\\DesignerApp\\Students_Classes_Centraliser\\Students_Classes_Centraliser\\UnivClass.cs",
+              "RelativeToolTip": "Students_Classes_Centraliser\\UnivClass.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAjAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-10T14:44:03.248Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Form1.cs",
+              "DocumentMoniker": "\\\\Mac\\Home\\Documents\\Codes\uF028\\StudentsCatalogue-WindowsApp\\DesignerApp\\Students_Classes_Centraliser\\Students_Classes_Centraliser\\Form1.cs",
+              "RelativeDocumentMoniker": "Students_Classes_Centraliser\\Form1.cs",
+              "ToolTip": "\\\\Mac\\Home\\Documents\\Codes\uF028\\StudentsCatalogue-WindowsApp\\DesignerApp\\Students_Classes_Centraliser\\Students_Classes_Centraliser\\Form1.cs",
+              "RelativeToolTip": "Students_Classes_Centraliser\\Form1.cs",
+              "ViewState": "AQIAAPoCAAAAAAAAAAAmwAYDAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-08T07:10:20.094Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "AdaugaClasa.cs",
+              "DocumentMoniker": "\\\\Mac\\Home\\Documents\\Codes\uF028\\StudentsCatalogue-WindowsApp\\DesignerApp\\Students_Classes_Centraliser\\Students_Classes_Centraliser\\AdaugaClasa.cs",
+              "RelativeDocumentMoniker": "Students_Classes_Centraliser\\AdaugaClasa.cs",
+              "ToolTip": "\\\\Mac\\Home\\Documents\\Codes\uF028\\StudentsCatalogue-WindowsApp\\DesignerApp\\Students_Classes_Centraliser\\Students_Classes_Centraliser\\AdaugaClasa.cs",
+              "RelativeToolTip": "Students_Classes_Centraliser\\AdaugaClasa.cs",
+              "ViewState": "AQIAACcAAACampmZmbkzwEkAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-11T18:59:15.326Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Student.cs",
+              "DocumentMoniker": "\\\\Mac\\Home\\Documents\\Codes\uF028\\StudentsCatalogue-WindowsApp\\DesignerApp\\Students_Classes_Centraliser\\Students_Classes_Centraliser\\Student.cs",
+              "RelativeDocumentMoniker": "Students_Classes_Centraliser\\Student.cs",
+              "ToolTip": "\\\\Mac\\Home\\Documents\\Codes\uF028\\StudentsCatalogue-WindowsApp\\DesignerApp\\Students_Classes_Centraliser\\Students_Classes_Centraliser\\Student.cs",
+              "RelativeToolTip": "Students_Classes_Centraliser\\Student.cs",
+              "ViewState": "AQIAAAgAAACAn5mZmRkWwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-12T14:03:29.54Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Form1.Designer.cs",
+              "DocumentMoniker": "\\\\Mac\\Home\\Documents\\Codes\uF028\\StudentsCatalogue-WindowsApp\\DesignerApp\\Students_Classes_Centraliser\\Students_Classes_Centraliser\\Form1.Designer.cs",
+              "RelativeDocumentMoniker": "Students_Classes_Centraliser\\Form1.Designer.cs",
+              "ToolTip": "\\\\Mac\\Home\\Documents\\Codes\uF028\\StudentsCatalogue-WindowsApp\\DesignerApp\\Students_Classes_Centraliser\\Students_Classes_Centraliser\\Form1.Designer.cs",
+              "RelativeToolTip": "Students_Classes_Centraliser\\Form1.Designer.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-25T09:12:36.765Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "AdaugaStudent.cs",
+              "DocumentMoniker": "\\\\Mac\\Home\\Documents\\Codes\uF028\\StudentsCatalogue-WindowsApp\\DesignerApp\\Students_Classes_Centraliser\\Students_Classes_Centraliser\\AdaugaStudent.cs",
+              "RelativeDocumentMoniker": "Students_Classes_Centraliser\\AdaugaStudent.cs",
+              "ToolTip": "\\\\Mac\\Home\\Documents\\Codes\uF028\\StudentsCatalogue-WindowsApp\\DesignerApp\\Students_Classes_Centraliser\\Students_Classes_Centraliser\\AdaugaStudent.cs",
+              "RelativeToolTip": "Students_Classes_Centraliser\\AdaugaStudent.cs",
+              "ViewState": "AQIAADQAAABAn5mZmVkmwD8AAAAaAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-11T18:52:40.118Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

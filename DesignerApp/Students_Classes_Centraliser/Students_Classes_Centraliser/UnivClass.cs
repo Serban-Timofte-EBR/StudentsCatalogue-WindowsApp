@@ -16,6 +16,17 @@ namespace Students_Classes_Centraliser
         public string description;
         public string proffesorName;
         public int credits;
+        public List<Student> students;
+
+       public List<Student> Students
+        {
+            get => students;
+            set
+            {
+                if (value == null) throw new Exception("Lista de studenti nu poate fi null.");
+                students = value;
+            }
+        }
 
         public string UnivClassName
         {
@@ -71,6 +82,7 @@ namespace Students_Classes_Centraliser
             univClassId = ++NUMBER_OF_CLASSES_IN_DB;
             UnivClassName = univClassName;
             Credits = 1;
+            Students = new List<Student>();
         }
 
         public UnivClass(string univClassName, string description, string professorName, int credits)
@@ -80,6 +92,7 @@ namespace Students_Classes_Centraliser
             Description = description;
             ProfessorName = professorName;
             Credits = credits;
+            Students = new List<Student>();
         }
 
         public void UpdateClassDetails(string newUnivClassName = null, string newDescription = null,

@@ -16,3 +16,4 @@
 \\Mac\Home\Documents\Codes\StudentsCatalogue-WindowsApp\DesignerApp\Students_Classes_Centraliser\Students_Classes_Centraliser\obj\Debug\net6.0-windows\ref\Students_Classes_Centraliser.dll
 \\Mac\Home\Documents\Codes\StudentsCatalogue-WindowsApp\DesignerApp\Students_Classes_Centraliser\Students_Classes_Centraliser\obj\Debug\net6.0-windows\Students_Classes_Centraliser.AdaugaStudent.resources
 \\Mac\Home\Documents\Codes\StudentsCatalogue-WindowsApp\DesignerApp\Students_Classes_Centraliser\Students_Classes_Centraliser\obj\Debug\net6.0-windows\Students_Classes_Centraliser.AdaugaClasa.resources
+\\Mac\Home\Documents\Codes\StudentsCatalogue-WindowsApp\DesignerApp\Students_Classes_Centraliser\Students_Classes_Centraliser\obj\Debug\net6.0-windows\Students_Classes_Centraliser.sourcelink.json

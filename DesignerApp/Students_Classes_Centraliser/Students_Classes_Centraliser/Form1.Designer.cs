@@ -61,6 +61,7 @@
             salvareXMLToolStripMenuItem1 = new ToolStripMenuItem();
             restaurareBinarToolStripMenuItem1 = new ToolStripMenuItem();
             restaurareXMLToolStripMenuItem1 = new ToolStripMenuItem();
+            generareRaportToolStripMenuItem = new ToolStripMenuItem();
             tbTitluClase = new TextBox();
             lvClase = new ListView();
             Clasa = new ColumnHeader();
@@ -72,6 +73,7 @@
             editeazaToolStripMenuItem2 = new ToolStripMenuItem();
             stergeToolStripMenuItem3 = new ToolStripMenuItem();
             twClaseStudenti = new TreeView();
+            tbTitluCentralizator = new TextBox();
             contextMenuStripStudenti.SuspendLayout();
             navBarApp.SuspendLayout();
             contextMenuStripClase.SuspendLayout();
@@ -79,6 +81,7 @@
             // 
             // lvStudenti
             // 
+            lvStudenti.BackColor = Color.WhiteSmoke;
             lvStudenti.Columns.AddRange(new ColumnHeader[] { Nume, Prenume, DataNastere, Email, Status, An, ProgramDeStudiu });
             lvStudenti.ContextMenuStrip = contextMenuStripStudenti;
             lvStudenti.FullRowSelect = true;
@@ -151,6 +154,7 @@
             // 
             // tbTitluStudenti
             // 
+            tbTitluStudenti.BackColor = SystemColors.Info;
             tbTitluStudenti.Location = new Point(2, 53);
             tbTitluStudenti.Margin = new Padding(4, 2, 4, 2);
             tbTitluStudenti.Name = "tbTitluStudenti";
@@ -162,7 +166,7 @@
             // navBarApp
             // 
             navBarApp.ImageScalingSize = new Size(32, 32);
-            navBarApp.Items.AddRange(new ToolStripItem[] { studentiToolStripMenuItem, claseToolStripMenuItem });
+            navBarApp.Items.AddRange(new ToolStripItem[] { studentiToolStripMenuItem, claseToolStripMenuItem, generareRaportToolStripMenuItem });
             navBarApp.Location = new Point(0, 0);
             navBarApp.Name = "navBarApp";
             navBarApp.Size = new Size(1894, 40);
@@ -295,8 +299,16 @@
             restaurareXMLToolStripMenuItem1.Text = "Restaurare XML";
             restaurareXMLToolStripMenuItem1.Click += restaurareXMLToolStripMenuItem1_Click;
             // 
+            // generareRaportToolStripMenuItem
+            // 
+            generareRaportToolStripMenuItem.Name = "generareRaportToolStripMenuItem";
+            generareRaportToolStripMenuItem.Size = new Size(208, 36);
+            generareRaportToolStripMenuItem.Text = "Generare Raport";
+            generareRaportToolStripMenuItem.Click += generareRaportToolStripMenuItem_Click;
+            // 
             // tbTitluClase
             // 
+            tbTitluClase.BackColor = SystemColors.Info;
             tbTitluClase.Location = new Point(916, 53);
             tbTitluClase.Margin = new Padding(4, 2, 4, 2);
             tbTitluClase.Name = "tbTitluClase";
@@ -306,6 +318,7 @@
             // 
             // lvClase
             // 
+            lvClase.BackColor = Color.WhiteSmoke;
             lvClase.Columns.AddRange(new ColumnHeader[] { Clasa, Descriere, Profesor, Credite });
             lvClase.ContextMenuStrip = contextMenuStripClase;
             lvClase.FullRowSelect = true;
@@ -368,7 +381,8 @@
             // twClaseStudenti
             // 
             twClaseStudenti.AllowDrop = true;
-            twClaseStudenti.Location = new Point(452, 560);
+            twClaseStudenti.BackColor = Color.WhiteSmoke;
+            twClaseStudenti.Location = new Point(452, 595);
             twClaseStudenti.Name = "twClaseStudenti";
             twClaseStudenti.Size = new Size(876, 447);
             twClaseStudenti.TabIndex = 5;
@@ -376,11 +390,23 @@
             twClaseStudenti.DragEnter += twClaseStudenti_DragEnter;
             twClaseStudenti.KeyPress += twClaseStudenti_KeyPress;
             // 
+            // tbTitluCentralizator
+            // 
+            tbTitluCentralizator.BackColor = SystemColors.Info;
+            tbTitluCentralizator.Location = new Point(452, 551);
+            tbTitluCentralizator.Margin = new Padding(4, 2, 4, 2);
+            tbTitluCentralizator.Name = "tbTitluCentralizator";
+            tbTitluCentralizator.Size = new Size(876, 39);
+            tbTitluCentralizator.TabIndex = 6;
+            tbTitluCentralizator.Text = "                                      Centralizator Clase - Studenti";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.OldLace;
             ClientSize = new Size(1894, 1054);
+            Controls.Add(tbTitluCentralizator);
             Controls.Add(twClaseStudenti);
             Controls.Add(lvClase);
             Controls.Add(tbTitluClase);
@@ -444,5 +470,7 @@
         private ToolStripMenuItem restaurareBinarToolStripMenuItem1;
         private ToolStripMenuItem restaurareXMLToolStripMenuItem1;
         private TreeView twClaseStudenti;
+        private ToolStripMenuItem generareRaportToolStripMenuItem;
+        private TextBox tbTitluCentralizator;
     }
 }

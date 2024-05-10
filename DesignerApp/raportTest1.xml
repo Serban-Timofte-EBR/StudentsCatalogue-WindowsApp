@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfUnivClass xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <UnivClass>
+    <univClassId>4</univClassId>
+    <univClassName>PAW</univClassName>
+    <description>C# and Windows Forms</description>
+    <proffesorName>Prof. Dr. Ion Ionescu</proffesorName>
+    <credits>5</credits>
+    <students />
+    <Students />
+    <UnivClassName>PAW</UnivClassName>
+    <Description>C# and Windows Forms</Description>
+    <ProfessorName>Prof. Dr. Ion Ionescu</ProfessorName>
+    <Credits>5</Credits>
+  </UnivClass>
+  <UnivClass>
+    <univClassId>5</univClassId>
+    <univClassName>SDD</univClassName>
+    <description>Implementing data structures in C</description>
+    <proffesorName>Prof. Dr. Struct Structurescu</proffesorName>
+    <credits>4</credits>
+    <students />
+    <Students />
+    <UnivClassName>SDD</UnivClassName>
+    <Description>Implementing data structures in C</Description>
+    <ProfessorName>Prof. Dr. Struct Structurescu</ProfessorName>
+    <Credits>4</Credits>
+  </UnivClass>
+  <UnivClass>
+    <univClassId>6</univClassId>
+    <univClassName>MRAI</univClassName>
+    <description>Risk management</description>
+    <proffesorName>Prof. Dr. Risculescovici Riscovici</proffesorName>
+    <credits>3</credits>
+    <students />
+    <Students />
+    <UnivClassName>MRAI</UnivClassName>
+    <Description>Risk management</Description>
+    <ProfessorName>Prof. Dr. Risculescovici Riscovici</ProfessorName>
+    <Credits>3</Credits>
+  </UnivClass>
+  <UnivClass>
+    <univClassId>7</univClassId>
+    <univClassName>PAW</univClassName>
+    <description>C# and Windows Forms</description>
+    <proffesorName>Prof. Dr. Ion Ionescu</proffesorName>
+    <credits>5</credits>
+    <students>
+      <Student>
+        <familyName>Popescu</familyName>
+        <givenName>Ion</givenName>
+        <dateOfBirth>2000-04-25T00:00:00</dateOfBirth>
+        <email>ion.popescu@example.com</email>
+        <address>Strada Principala, Nr. 1, Bucuresti</address>
+        <gender>77</gender>
+        <phoneNumber>0700000001</phoneNumber>
+        <yearOfStudy>1</yearOfStudy>
+        <university>Universitatea Bucuresti</university>
+        <faculty>Facultatea de Matematica si Informatica</faculty>
+        <programOfStudy>Informatica</programOfStudy>
+        <enrollmentStatusStudent>ACTIV</enrollmentStatusStudent>
+        <enrollmentDate>2024-05-10T18:06:17.5038292+03:00</enrollmentDate>
+        <mean>10</mean>
+        <FamilyName>Popescu</FamilyName>
+        <GivenName>Ion</GivenName>
+        <DateOfBirth>2000-04-25T00:00:00</DateOfBirth>
+        <Email>ion.popescu@example.com</Email>
+        <Address>Strada Principala, Nr. 1, Bucuresti</Address>
+        <Gender>77</Gender>
+        <PhoneNumber>0700000001</PhoneNumber>
+        <YearOfStudy>1</YearOfStudy>
+        <University>Universitatea Bucuresti</University>
+        <Faculty>Facultatea de Matematica si Informatica</Faculty>
+        <ProgramOfStudy>Informatica</ProgramOfStudy>
+        <EnrollmentStatusStudent>ACTIV</EnrollmentStatusStudent>
+        <EnrollmentDate>2024-05-10T18:06:17.5038292+03:00</EnrollmentDate>
+        <Mean>10</Mean>
+      </Student>
+    </students>
+    <Students>
+      <Student>
+        <familyName>Popescu</familyName>
+        <givenName>Ion</givenName>
+        <dateOfBirth>2000-04-25T00:00:00</dateOfBirth>
+        <email>ion.popescu@example.com</email>
+        <address>Strada Principala, Nr. 1, Bucuresti</address>
+        <gender>77</gender>
+        <phoneNumber>0700000001</phoneNumber>
+        <yearOfStudy>1</yearOfStudy>
+        <university>Universitatea Bucuresti</university>
+        <faculty>Facultatea de Matematica si Informatica</faculty>
+        <programOfStudy>Informatica</programOfStudy>
+        <enrollmentStatusStudent>ACTIV</enrollmentStatusStudent>
+        <enrollmentDate>2024-05-10T18:06:17.5038292+03:00</enrollmentDate>
+        <mean>10</mean>
+        <FamilyName>Popescu</FamilyName>
+        <GivenName>Ion</GivenName>
+        <DateOfBirth>2000-04-25T00:00:00</DateOfBirth>
+        <Email>ion.popescu@example.com</Email>
+        <Address>Strada Principala, Nr. 1, Bucuresti</Address>
+        <Gender>77</Gender>
+        <PhoneNumber>0700000001</PhoneNumber>
+        <YearOfStudy>1</YearOfStudy>
+        <University>Universitatea Bucuresti</University>
+        <Faculty>Facultatea de Matematica si Informatica</Faculty>
+        <ProgramOfStudy>Informatica</ProgramOfStudy>
+        <EnrollmentStatusStudent>ACTIV</EnrollmentStatusStudent>
+        <EnrollmentDate>2024-05-10T18:06:17.5038292+03:00</EnrollmentDate>
+        <Mean>10</Mean>
+      </Student>
+    </Students>
+    <UnivClassName>PAW</UnivClassName>
+    <Description>C# and Windows Forms</Description>
+    <ProfessorName>Prof. Dr. Ion Ionescu</ProfessorName>
+    <Credits>5</Credits>
+  </UnivClass>
+</ArrayOfUnivClass>

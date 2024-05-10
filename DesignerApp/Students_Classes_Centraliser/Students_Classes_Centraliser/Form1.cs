@@ -1,4 +1,4 @@
-using System.Runtime.Serialization;
+﻿using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Xml.Serialization;
 
@@ -690,30 +690,89 @@ namespace Students_Classes_Centraliser
                 t.Tag = c;
                 twClaseStudenti.Nodes.Add(t);
             }
-            else if(e.Effect == DragDropEffects.Copy && e.Data.GetDataPresent(typeof(Student)))
+            else if (e.Effect == DragDropEffects.Copy && e.Data.GetDataPresent(typeof(Student)))
             {
                 Point punct = new Point(e.X, e.Y);
                 Point punctTree = twClaseStudenti.PointToClient(punct);
                 TreeNode t = twClaseStudenti.GetNodeAt(punctTree);
+                UnivClass selectedUnviClass = twClaseStudenti.GetNodeAt(punctTree).Tag as UnivClass;
 
-                if( !(t == null) && e.Effect == DragDropEffects.Copy &&
+                if (!(t == null) && e.Effect == DragDropEffects.Copy &&
                     e.Data.GetDataPresent(typeof(Student)))
-                { 
+                {
                     Student s = (Student)e.Data.GetData(typeof(Student));
-                    TreeNode tn = new TreeNode(s.GivenName + " " + s.FamilyName + " - " + s.Mean);
-                    tn.Tag = s;
-                    t.Nodes.Add(tn);
-                    t.Expand();
+
+                    string nota = Microsoft.VisualBasic.Interaction.InputBox("Introduceti nota pentru " + s.GivenName + " " + s.FamilyName, "Introducere Nota", "10");
+                    float notaAsFloat;
+                    if (float.TryParse(nota, out notaAsFloat))
+                    {
+                        s.mean = notaAsFloat;
+                        TreeNode tn = new TreeNode(s.GivenName + " " + s.FamilyName + " - Nota: " + nota);
+                        tn.Tag = s;
+                        t.Nodes.Add(tn);
+                        t.Expand();
+                        selectedUnviClass.Students.Add(s);
+                    }
                 }
             }
         }
 
         private void lvStudenti_MouseDown(object sender, MouseEventArgs e)
         {
-            if(lvStudenti.SelectedItems.Count > 0)
+            if (lvStudenti.SelectedItems.Count > 0)
             {
                 lvStudenti.DoDragDrop((Student)lvStudenti.SelectedItems[0].Tag, DragDropEffects.Copy);
             }
         }
+
+        private void generareRaportToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog fd = new SaveFileDialog();
+            fd.Filter = "fisiere XML | *.xml";
+            fd.Title = "Salvează raportul XML";
+
+            if (fd.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    List<UnivClass> classes = new List<UnivClass>();
+                    foreach (TreeNode classNode in twClaseStudenti.Nodes)
+                    {
+                        UnivClass univClass = classNode.Tag as UnivClass;
+                        if (univClass != null)
+                        {
+                            UnivClass clone = new UnivClass(univClass.univClassName, univClass.description, univClass.ProfessorName, univClass.credits);
+                            foreach (TreeNode studentNode in classNode.Nodes)
+                            {
+                                Student student = studentNode.Tag as Student;
+                                if (student != null)
+                                {
+                                    string[] parts = studentNode.Text.Split(new string[] { " - Nota: " }, StringSplitOptions.None);
+                                    if (parts.Length == 2 && float.TryParse(parts[1], out float grade))
+                                    {
+                                        clone.Students.Add(new Student(student.familyName, student.givenName, student.dateOfBirth,
+                                            student.email, student.address, student.gender, student.phoneNumber,
+                                            student.yearOfStudy, student.university, student.faculty, student.programOfStudy,
+                                            student.EnrollmentStatusStudent, student.enrollmentDate, grade));
+                                    }
+                                }
+                            }
+                            classes.Add(clone);
+                        }
+                    }
+
+                    XmlSerializer serializer = new XmlSerializer(typeof(List<UnivClass>));
+                    Stream fisier = File.Create(fd.FileName);
+                    serializer.Serialize(fisier, classes);
+                    MessageBox.Show("Raportul XML a fost generat și salvat cu succes.", "Succes", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Eroare la generarea raportului: " + ex.Message, "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
     }
 }
+
+//data grid view in care sa aduci stundetii dintr-o clasa ( centralizator cu id clasa si id student si poate chiar si media )
