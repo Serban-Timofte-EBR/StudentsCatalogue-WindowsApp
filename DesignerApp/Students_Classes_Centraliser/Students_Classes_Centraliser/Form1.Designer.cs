@@ -405,7 +405,7 @@
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.OldLace;
-            ClientSize = new Size(1894, 1054);
+            ClientSize = new Size(1894, 1093);
             Controls.Add(tbTitluCentralizator);
             Controls.Add(twClaseStudenti);
             Controls.Add(lvClase);
