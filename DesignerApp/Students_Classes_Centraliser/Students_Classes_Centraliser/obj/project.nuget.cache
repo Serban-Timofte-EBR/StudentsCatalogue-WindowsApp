@@ -1,8 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "D3vEt9sXbSPq8gjZWCMkzNdU/i7uVqgObnnBT1TREhCeArDCrB65mgmYducJAJBq3D5iHQXpbGAPKCLsqlpf6g==",
+  "dgSpecHash": "e4LhYl6EfgNP9oRDAtds1iGiZSkwiqpa1nWXlL8MySCVvWw7AS8CcCnw3Yahr9frCz5iwsj41Pt81CMDljIrEg==",
   "success": true,
-  "projectFilePath": "\\\\Mac\\Home\\Documents\\Codes\\StudentsCatalogue-WindowsApp\\DesignerApp\\Students_Classes_Centraliser\\Students_Classes_Centraliser\\Students_Classes_Centraliser.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\serba\\Desktop\\StudentsCatalogue-WindowsApp\\DesignerApp\\Students_Classes_Centraliser\\Students_Classes_Centraliser\\Students_Classes_Centraliser.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\serba\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.29\\microsoft.windowsdesktop.app.ref.6.0.29.nupkg.sha512",
+    "C:\\Users\\serba\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.29\\microsoft.netcore.app.ref.6.0.29.nupkg.sha512",
+    "C:\\Users\\serba\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.29\\microsoft.aspnetcore.app.ref.6.0.29.nupkg.sha512",
+    "C:\\Users\\serba\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\6.0.29\\microsoft.netcore.app.host.win-x64.6.0.29.nupkg.sha512"
+  ],
   "logs": []
 }

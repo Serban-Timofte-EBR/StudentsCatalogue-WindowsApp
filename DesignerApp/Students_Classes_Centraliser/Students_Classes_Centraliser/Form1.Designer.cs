@@ -74,9 +74,35 @@
             stergeToolStripMenuItem3 = new ToolStripMenuItem();
             twClaseStudenti = new TreeView();
             tbTitluCentralizator = new TextBox();
+            dataGridView1 = new DataGridView();
+            familyNameDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            givenNameDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            dateOfBirthDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            emailDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            addressDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            genderDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            phoneNumberDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            yearOfStudyDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            universityDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            facultyDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            programOfStudyDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            enrollmentStatusStudentDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            enrollmentDateDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            meanDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            studentBindingSource = new BindingSource(components);
+            dataGridView2 = new DataGridView();
+            univClassBindingSource = new BindingSource(components);
+            univClassNameDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            descriptionDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            professorNameDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            creditsDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             contextMenuStripStudenti.SuspendLayout();
             navBarApp.SuspendLayout();
             contextMenuStripClase.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)studentBindingSource).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)univClassBindingSource).BeginInit();
             SuspendLayout();
             // 
             // lvStudenti
@@ -85,10 +111,10 @@
             lvStudenti.Columns.AddRange(new ColumnHeader[] { Nume, Prenume, DataNastere, Email, Status, An, ProgramDeStudiu });
             lvStudenti.ContextMenuStrip = contextMenuStripStudenti;
             lvStudenti.FullRowSelect = true;
-            lvStudenti.Location = new Point(2, 98);
-            lvStudenti.Margin = new Padding(4, 2, 4, 2);
+            lvStudenti.Location = new Point(1, 61);
+            lvStudenti.Margin = new Padding(2, 1, 2, 1);
             lvStudenti.Name = "lvStudenti";
-            lvStudenti.Size = new Size(836, 424);
+            lvStudenti.Size = new Size(516, 281);
             lvStudenti.TabIndex = 0;
             lvStudenti.UseCompatibleStateImageBehavior = false;
             lvStudenti.View = View.Details;
@@ -128,37 +154,37 @@
             contextMenuStripStudenti.ImageScalingSize = new Size(32, 32);
             contextMenuStripStudenti.Items.AddRange(new ToolStripItem[] { adaugaToolStripMenuItem2, editeazaToolStripMenuItem1, stergeToolStripMenuItem2 });
             contextMenuStripStudenti.Name = "contextMenuStripStudenti";
-            contextMenuStripStudenti.Size = new Size(177, 118);
+            contextMenuStripStudenti.Size = new Size(136, 76);
             contextMenuStripStudenti.Opening += contextMenuStripStudenti_Opening;
             // 
             // adaugaToolStripMenuItem2
             // 
             adaugaToolStripMenuItem2.Name = "adaugaToolStripMenuItem2";
-            adaugaToolStripMenuItem2.Size = new Size(176, 38);
+            adaugaToolStripMenuItem2.Size = new Size(135, 24);
             adaugaToolStripMenuItem2.Text = "Adauga";
             adaugaToolStripMenuItem2.Click += adaugaToolStripMenuItem2_Click_1;
             // 
             // editeazaToolStripMenuItem1
             // 
             editeazaToolStripMenuItem1.Name = "editeazaToolStripMenuItem1";
-            editeazaToolStripMenuItem1.Size = new Size(176, 38);
+            editeazaToolStripMenuItem1.Size = new Size(135, 24);
             editeazaToolStripMenuItem1.Text = "Editeaza";
             editeazaToolStripMenuItem1.Click += editeazaToolStripMenuItem1_Click;
             // 
             // stergeToolStripMenuItem2
             // 
             stergeToolStripMenuItem2.Name = "stergeToolStripMenuItem2";
-            stergeToolStripMenuItem2.Size = new Size(176, 38);
+            stergeToolStripMenuItem2.Size = new Size(135, 24);
             stergeToolStripMenuItem2.Text = "Sterge";
             stergeToolStripMenuItem2.Click += stergeToolStripMenuItem2_Click;
             // 
             // tbTitluStudenti
             // 
             tbTitluStudenti.BackColor = SystemColors.Info;
-            tbTitluStudenti.Location = new Point(2, 53);
-            tbTitluStudenti.Margin = new Padding(4, 2, 4, 2);
+            tbTitluStudenti.Location = new Point(1, 33);
+            tbTitluStudenti.Margin = new Padding(2, 1, 2, 1);
             tbTitluStudenti.Name = "tbTitluStudenti";
-            tbTitluStudenti.Size = new Size(834, 39);
+            tbTitluStudenti.Size = new Size(515, 27);
             tbTitluStudenti.TabIndex = 1;
             tbTitluStudenti.Text = "                                           Lista Studenti";
             tbTitluStudenti.TextChanged += tbTitluStudenti_TextChanged;
@@ -169,7 +195,8 @@
             navBarApp.Items.AddRange(new ToolStripItem[] { studentiToolStripMenuItem, claseToolStripMenuItem, generareRaportToolStripMenuItem });
             navBarApp.Location = new Point(0, 0);
             navBarApp.Name = "navBarApp";
-            navBarApp.Size = new Size(1894, 40);
+            navBarApp.Padding = new Padding(4, 1, 0, 1);
+            navBarApp.Size = new Size(1675, 26);
             navBarApp.TabIndex = 2;
             navBarApp.Text = "navBarApp";
             // 
@@ -177,27 +204,27 @@
             // 
             studentiToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { adaugaToolStripMenuItem, modificaToolStripMenuItem, stergeToolStripMenuItem, fisierToolStripMenuItem });
             studentiToolStripMenuItem.Name = "studentiToolStripMenuItem";
-            studentiToolStripMenuItem.Size = new Size(123, 36);
+            studentiToolStripMenuItem.Size = new Size(78, 24);
             studentiToolStripMenuItem.Text = "Studenti";
             // 
             // adaugaToolStripMenuItem
             // 
             adaugaToolStripMenuItem.Name = "adaugaToolStripMenuItem";
-            adaugaToolStripMenuItem.Size = new Size(240, 44);
+            adaugaToolStripMenuItem.Size = new Size(151, 26);
             adaugaToolStripMenuItem.Text = "Adauga";
             adaugaToolStripMenuItem.Click += adaugaToolStripMenuItem_Click;
             // 
             // modificaToolStripMenuItem
             // 
             modificaToolStripMenuItem.Name = "modificaToolStripMenuItem";
-            modificaToolStripMenuItem.Size = new Size(240, 44);
+            modificaToolStripMenuItem.Size = new Size(151, 26);
             modificaToolStripMenuItem.Text = "Modifica";
             modificaToolStripMenuItem.Click += modificaToolStripMenuItem_Click;
             // 
             // stergeToolStripMenuItem
             // 
             stergeToolStripMenuItem.Name = "stergeToolStripMenuItem";
-            stergeToolStripMenuItem.Size = new Size(240, 44);
+            stergeToolStripMenuItem.Size = new Size(151, 26);
             stergeToolStripMenuItem.Text = "Sterge";
             stergeToolStripMenuItem.Click += stergeToolStripMenuItem_Click;
             // 
@@ -205,34 +232,34 @@
             // 
             fisierToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { salvareBinarToolStripMenuItem, salvareXMLToolStripMenuItem, restaurareBinarToolStripMenuItem, restaurareXMLToolStripMenuItem });
             fisierToolStripMenuItem.Name = "fisierToolStripMenuItem";
-            fisierToolStripMenuItem.Size = new Size(240, 44);
+            fisierToolStripMenuItem.Size = new Size(151, 26);
             fisierToolStripMenuItem.Text = "Fisier";
             // 
             // salvareBinarToolStripMenuItem
             // 
             salvareBinarToolStripMenuItem.Name = "salvareBinarToolStripMenuItem";
-            salvareBinarToolStripMenuItem.Size = new Size(319, 44);
+            salvareBinarToolStripMenuItem.Size = new Size(200, 26);
             salvareBinarToolStripMenuItem.Text = "Salvare Binar";
             salvareBinarToolStripMenuItem.Click += salvareBinarToolStripMenuItem_Click;
             // 
             // salvareXMLToolStripMenuItem
             // 
             salvareXMLToolStripMenuItem.Name = "salvareXMLToolStripMenuItem";
-            salvareXMLToolStripMenuItem.Size = new Size(319, 44);
+            salvareXMLToolStripMenuItem.Size = new Size(200, 26);
             salvareXMLToolStripMenuItem.Text = "Salvare XML";
             salvareXMLToolStripMenuItem.Click += salvareXMLToolStripMenuItem_Click;
             // 
             // restaurareBinarToolStripMenuItem
             // 
             restaurareBinarToolStripMenuItem.Name = "restaurareBinarToolStripMenuItem";
-            restaurareBinarToolStripMenuItem.Size = new Size(319, 44);
+            restaurareBinarToolStripMenuItem.Size = new Size(200, 26);
             restaurareBinarToolStripMenuItem.Text = "Restaurare Binar";
             restaurareBinarToolStripMenuItem.Click += restaurareBinarToolStripMenuItem_Click;
             // 
             // restaurareXMLToolStripMenuItem
             // 
             restaurareXMLToolStripMenuItem.Name = "restaurareXMLToolStripMenuItem";
-            restaurareXMLToolStripMenuItem.Size = new Size(319, 44);
+            restaurareXMLToolStripMenuItem.Size = new Size(200, 26);
             restaurareXMLToolStripMenuItem.Text = "Restaurare XML";
             restaurareXMLToolStripMenuItem.Click += restaurareXMLToolStripMenuItem_Click;
             // 
@@ -240,27 +267,27 @@
             // 
             claseToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { adaugaToolStripMenuItem1, editeazaToolStripMenuItem, stergeToolStripMenuItem1, fisiereToolStripMenuItem });
             claseToolStripMenuItem.Name = "claseToolStripMenuItem";
-            claseToolStripMenuItem.Size = new Size(90, 36);
+            claseToolStripMenuItem.Size = new Size(58, 24);
             claseToolStripMenuItem.Text = "Clase";
             // 
             // adaugaToolStripMenuItem1
             // 
             adaugaToolStripMenuItem1.Name = "adaugaToolStripMenuItem1";
-            adaugaToolStripMenuItem1.Size = new Size(235, 44);
+            adaugaToolStripMenuItem1.Size = new Size(149, 26);
             adaugaToolStripMenuItem1.Text = "Adauga";
             adaugaToolStripMenuItem1.Click += adaugaToolStripMenuItem1_Click;
             // 
             // editeazaToolStripMenuItem
             // 
             editeazaToolStripMenuItem.Name = "editeazaToolStripMenuItem";
-            editeazaToolStripMenuItem.Size = new Size(235, 44);
+            editeazaToolStripMenuItem.Size = new Size(149, 26);
             editeazaToolStripMenuItem.Text = "Editeaza";
             editeazaToolStripMenuItem.Click += editeazaToolStripMenuItem_Click;
             // 
             // stergeToolStripMenuItem1
             // 
             stergeToolStripMenuItem1.Name = "stergeToolStripMenuItem1";
-            stergeToolStripMenuItem1.Size = new Size(235, 44);
+            stergeToolStripMenuItem1.Size = new Size(149, 26);
             stergeToolStripMenuItem1.Text = "Sterge";
             stergeToolStripMenuItem1.Click += stergeToolStripMenuItem1_Click;
             // 
@@ -268,51 +295,51 @@
             // 
             fisiereToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { salvareBinarToolStripMenuItem1, salvareXMLToolStripMenuItem1, restaurareBinarToolStripMenuItem1, restaurareXMLToolStripMenuItem1 });
             fisiereToolStripMenuItem.Name = "fisiereToolStripMenuItem";
-            fisiereToolStripMenuItem.Size = new Size(235, 44);
+            fisiereToolStripMenuItem.Size = new Size(149, 26);
             fisiereToolStripMenuItem.Text = "Fisiere";
             // 
             // salvareBinarToolStripMenuItem1
             // 
             salvareBinarToolStripMenuItem1.Name = "salvareBinarToolStripMenuItem1";
-            salvareBinarToolStripMenuItem1.Size = new Size(319, 44);
+            salvareBinarToolStripMenuItem1.Size = new Size(200, 26);
             salvareBinarToolStripMenuItem1.Text = "Salvare Binar";
             salvareBinarToolStripMenuItem1.Click += salvareBinarToolStripMenuItem1_Click;
             // 
             // salvareXMLToolStripMenuItem1
             // 
             salvareXMLToolStripMenuItem1.Name = "salvareXMLToolStripMenuItem1";
-            salvareXMLToolStripMenuItem1.Size = new Size(319, 44);
+            salvareXMLToolStripMenuItem1.Size = new Size(200, 26);
             salvareXMLToolStripMenuItem1.Text = "Salvare XML";
             salvareXMLToolStripMenuItem1.Click += salvareXMLToolStripMenuItem1_Click;
             // 
             // restaurareBinarToolStripMenuItem1
             // 
             restaurareBinarToolStripMenuItem1.Name = "restaurareBinarToolStripMenuItem1";
-            restaurareBinarToolStripMenuItem1.Size = new Size(319, 44);
+            restaurareBinarToolStripMenuItem1.Size = new Size(200, 26);
             restaurareBinarToolStripMenuItem1.Text = "Restaurare Binar";
             restaurareBinarToolStripMenuItem1.Click += restaurareBinarToolStripMenuItem1_Click;
             // 
             // restaurareXMLToolStripMenuItem1
             // 
             restaurareXMLToolStripMenuItem1.Name = "restaurareXMLToolStripMenuItem1";
-            restaurareXMLToolStripMenuItem1.Size = new Size(319, 44);
+            restaurareXMLToolStripMenuItem1.Size = new Size(200, 26);
             restaurareXMLToolStripMenuItem1.Text = "Restaurare XML";
             restaurareXMLToolStripMenuItem1.Click += restaurareXMLToolStripMenuItem1_Click;
             // 
             // generareRaportToolStripMenuItem
             // 
             generareRaportToolStripMenuItem.Name = "generareRaportToolStripMenuItem";
-            generareRaportToolStripMenuItem.Size = new Size(208, 36);
+            generareRaportToolStripMenuItem.Size = new Size(132, 24);
             generareRaportToolStripMenuItem.Text = "Generare Raport";
             generareRaportToolStripMenuItem.Click += generareRaportToolStripMenuItem_Click;
             // 
             // tbTitluClase
             // 
             tbTitluClase.BackColor = SystemColors.Info;
-            tbTitluClase.Location = new Point(916, 53);
-            tbTitluClase.Margin = new Padding(4, 2, 4, 2);
+            tbTitluClase.Location = new Point(564, 33);
+            tbTitluClase.Margin = new Padding(2, 1, 2, 1);
             tbTitluClase.Name = "tbTitluClase";
-            tbTitluClase.Size = new Size(838, 39);
+            tbTitluClase.Size = new Size(517, 27);
             tbTitluClase.TabIndex = 3;
             tbTitluClase.Text = "                                           Lista Clase";
             // 
@@ -322,10 +349,10 @@
             lvClase.Columns.AddRange(new ColumnHeader[] { Clasa, Descriere, Profesor, Credite });
             lvClase.ContextMenuStrip = contextMenuStripClase;
             lvClase.FullRowSelect = true;
-            lvClase.Location = new Point(919, 98);
-            lvClase.Margin = new Padding(4, 2, 4, 2);
+            lvClase.Location = new Point(566, 61);
+            lvClase.Margin = new Padding(2, 1, 2, 1);
             lvClase.Name = "lvClase";
-            lvClase.Size = new Size(832, 422);
+            lvClase.Size = new Size(514, 281);
             lvClase.TabIndex = 4;
             lvClase.Tag = "";
             lvClase.UseCompatibleStateImageBehavior = false;
@@ -354,27 +381,27 @@
             contextMenuStripClase.ImageScalingSize = new Size(32, 32);
             contextMenuStripClase.Items.AddRange(new ToolStripItem[] { adaugaToolStripMenuItem3, editeazaToolStripMenuItem2, stergeToolStripMenuItem3 });
             contextMenuStripClase.Name = "contextMenuStripClase";
-            contextMenuStripClase.Size = new Size(177, 118);
+            contextMenuStripClase.Size = new Size(136, 76);
             contextMenuStripClase.Opening += contextMenuStripClase_Opening;
             // 
             // adaugaToolStripMenuItem3
             // 
             adaugaToolStripMenuItem3.Name = "adaugaToolStripMenuItem3";
-            adaugaToolStripMenuItem3.Size = new Size(176, 38);
+            adaugaToolStripMenuItem3.Size = new Size(135, 24);
             adaugaToolStripMenuItem3.Text = "Adauga";
             adaugaToolStripMenuItem3.Click += adaugaToolStripMenuItem3_Click;
             // 
             // editeazaToolStripMenuItem2
             // 
             editeazaToolStripMenuItem2.Name = "editeazaToolStripMenuItem2";
-            editeazaToolStripMenuItem2.Size = new Size(176, 38);
+            editeazaToolStripMenuItem2.Size = new Size(135, 24);
             editeazaToolStripMenuItem2.Text = "Editeaza";
             editeazaToolStripMenuItem2.Click += editeazaToolStripMenuItem2_Click;
             // 
             // stergeToolStripMenuItem3
             // 
             stergeToolStripMenuItem3.Name = "stergeToolStripMenuItem3";
-            stergeToolStripMenuItem3.Size = new Size(176, 38);
+            stergeToolStripMenuItem3.Size = new Size(135, 24);
             stergeToolStripMenuItem3.Text = "Sterge";
             stergeToolStripMenuItem3.Click += stergeToolStripMenuItem3_Click;
             // 
@@ -382,9 +409,10 @@
             // 
             twClaseStudenti.AllowDrop = true;
             twClaseStudenti.BackColor = Color.WhiteSmoke;
-            twClaseStudenti.Location = new Point(452, 595);
+            twClaseStudenti.Location = new Point(1109, 61);
+            twClaseStudenti.Margin = new Padding(2);
             twClaseStudenti.Name = "twClaseStudenti";
-            twClaseStudenti.Size = new Size(876, 447);
+            twClaseStudenti.Size = new Size(541, 281);
             twClaseStudenti.TabIndex = 5;
             twClaseStudenti.DragDrop += twClaseStudenti_DragDrop_1;
             twClaseStudenti.DragEnter += twClaseStudenti_DragEnter;
@@ -393,19 +421,199 @@
             // tbTitluCentralizator
             // 
             tbTitluCentralizator.BackColor = SystemColors.Info;
-            tbTitluCentralizator.Location = new Point(452, 551);
-            tbTitluCentralizator.Margin = new Padding(4, 2, 4, 2);
+            tbTitluCentralizator.Location = new Point(1109, 33);
+            tbTitluCentralizator.Margin = new Padding(2, 1, 2, 1);
             tbTitluCentralizator.Name = "tbTitluCentralizator";
-            tbTitluCentralizator.Size = new Size(876, 39);
+            tbTitluCentralizator.Size = new Size(541, 27);
             tbTitluCentralizator.TabIndex = 6;
             tbTitluCentralizator.Text = "                                      Centralizator Clase - Studenti";
             // 
+            // dataGridView1
+            // 
+            dataGridView1.AutoGenerateColumns = false;
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { familyNameDataGridViewTextBoxColumn, givenNameDataGridViewTextBoxColumn, dateOfBirthDataGridViewTextBoxColumn, emailDataGridViewTextBoxColumn, addressDataGridViewTextBoxColumn, genderDataGridViewTextBoxColumn, phoneNumberDataGridViewTextBoxColumn, yearOfStudyDataGridViewTextBoxColumn, universityDataGridViewTextBoxColumn, facultyDataGridViewTextBoxColumn, programOfStudyDataGridViewTextBoxColumn, enrollmentStatusStudentDataGridViewTextBoxColumn, enrollmentDateDataGridViewTextBoxColumn, meanDataGridViewTextBoxColumn });
+            dataGridView1.DataSource = studentBindingSource;
+            dataGridView1.Location = new Point(0, 373);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.RowHeadersWidth = 51;
+            dataGridView1.RowTemplate.Height = 29;
+            dataGridView1.Size = new Size(516, 284);
+            dataGridView1.TabIndex = 7;
+            // 
+            // familyNameDataGridViewTextBoxColumn
+            // 
+            familyNameDataGridViewTextBoxColumn.DataPropertyName = "FamilyName";
+            familyNameDataGridViewTextBoxColumn.HeaderText = "FamilyName";
+            familyNameDataGridViewTextBoxColumn.MinimumWidth = 6;
+            familyNameDataGridViewTextBoxColumn.Name = "familyNameDataGridViewTextBoxColumn";
+            familyNameDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // givenNameDataGridViewTextBoxColumn
+            // 
+            givenNameDataGridViewTextBoxColumn.DataPropertyName = "GivenName";
+            givenNameDataGridViewTextBoxColumn.HeaderText = "GivenName";
+            givenNameDataGridViewTextBoxColumn.MinimumWidth = 6;
+            givenNameDataGridViewTextBoxColumn.Name = "givenNameDataGridViewTextBoxColumn";
+            givenNameDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // dateOfBirthDataGridViewTextBoxColumn
+            // 
+            dateOfBirthDataGridViewTextBoxColumn.DataPropertyName = "DateOfBirth";
+            dateOfBirthDataGridViewTextBoxColumn.HeaderText = "DateOfBirth";
+            dateOfBirthDataGridViewTextBoxColumn.MinimumWidth = 6;
+            dateOfBirthDataGridViewTextBoxColumn.Name = "dateOfBirthDataGridViewTextBoxColumn";
+            dateOfBirthDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // emailDataGridViewTextBoxColumn
+            // 
+            emailDataGridViewTextBoxColumn.DataPropertyName = "Email";
+            emailDataGridViewTextBoxColumn.HeaderText = "Email";
+            emailDataGridViewTextBoxColumn.MinimumWidth = 6;
+            emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
+            emailDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // addressDataGridViewTextBoxColumn
+            // 
+            addressDataGridViewTextBoxColumn.DataPropertyName = "Address";
+            addressDataGridViewTextBoxColumn.HeaderText = "Address";
+            addressDataGridViewTextBoxColumn.MinimumWidth = 6;
+            addressDataGridViewTextBoxColumn.Name = "addressDataGridViewTextBoxColumn";
+            addressDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // genderDataGridViewTextBoxColumn
+            // 
+            genderDataGridViewTextBoxColumn.DataPropertyName = "Gender";
+            genderDataGridViewTextBoxColumn.HeaderText = "Gender";
+            genderDataGridViewTextBoxColumn.MinimumWidth = 6;
+            genderDataGridViewTextBoxColumn.Name = "genderDataGridViewTextBoxColumn";
+            genderDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // phoneNumberDataGridViewTextBoxColumn
+            // 
+            phoneNumberDataGridViewTextBoxColumn.DataPropertyName = "PhoneNumber";
+            phoneNumberDataGridViewTextBoxColumn.HeaderText = "PhoneNumber";
+            phoneNumberDataGridViewTextBoxColumn.MinimumWidth = 6;
+            phoneNumberDataGridViewTextBoxColumn.Name = "phoneNumberDataGridViewTextBoxColumn";
+            phoneNumberDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // yearOfStudyDataGridViewTextBoxColumn
+            // 
+            yearOfStudyDataGridViewTextBoxColumn.DataPropertyName = "YearOfStudy";
+            yearOfStudyDataGridViewTextBoxColumn.HeaderText = "YearOfStudy";
+            yearOfStudyDataGridViewTextBoxColumn.MinimumWidth = 6;
+            yearOfStudyDataGridViewTextBoxColumn.Name = "yearOfStudyDataGridViewTextBoxColumn";
+            yearOfStudyDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // universityDataGridViewTextBoxColumn
+            // 
+            universityDataGridViewTextBoxColumn.DataPropertyName = "University";
+            universityDataGridViewTextBoxColumn.HeaderText = "University";
+            universityDataGridViewTextBoxColumn.MinimumWidth = 6;
+            universityDataGridViewTextBoxColumn.Name = "universityDataGridViewTextBoxColumn";
+            universityDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // facultyDataGridViewTextBoxColumn
+            // 
+            facultyDataGridViewTextBoxColumn.DataPropertyName = "Faculty";
+            facultyDataGridViewTextBoxColumn.HeaderText = "Faculty";
+            facultyDataGridViewTextBoxColumn.MinimumWidth = 6;
+            facultyDataGridViewTextBoxColumn.Name = "facultyDataGridViewTextBoxColumn";
+            facultyDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // programOfStudyDataGridViewTextBoxColumn
+            // 
+            programOfStudyDataGridViewTextBoxColumn.DataPropertyName = "ProgramOfStudy";
+            programOfStudyDataGridViewTextBoxColumn.HeaderText = "ProgramOfStudy";
+            programOfStudyDataGridViewTextBoxColumn.MinimumWidth = 6;
+            programOfStudyDataGridViewTextBoxColumn.Name = "programOfStudyDataGridViewTextBoxColumn";
+            programOfStudyDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // enrollmentStatusStudentDataGridViewTextBoxColumn
+            // 
+            enrollmentStatusStudentDataGridViewTextBoxColumn.DataPropertyName = "EnrollmentStatusStudent";
+            enrollmentStatusStudentDataGridViewTextBoxColumn.HeaderText = "EnrollmentStatusStudent";
+            enrollmentStatusStudentDataGridViewTextBoxColumn.MinimumWidth = 6;
+            enrollmentStatusStudentDataGridViewTextBoxColumn.Name = "enrollmentStatusStudentDataGridViewTextBoxColumn";
+            enrollmentStatusStudentDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // enrollmentDateDataGridViewTextBoxColumn
+            // 
+            enrollmentDateDataGridViewTextBoxColumn.DataPropertyName = "EnrollmentDate";
+            enrollmentDateDataGridViewTextBoxColumn.HeaderText = "EnrollmentDate";
+            enrollmentDateDataGridViewTextBoxColumn.MinimumWidth = 6;
+            enrollmentDateDataGridViewTextBoxColumn.Name = "enrollmentDateDataGridViewTextBoxColumn";
+            enrollmentDateDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // meanDataGridViewTextBoxColumn
+            // 
+            meanDataGridViewTextBoxColumn.DataPropertyName = "Mean";
+            meanDataGridViewTextBoxColumn.HeaderText = "Mean";
+            meanDataGridViewTextBoxColumn.MinimumWidth = 6;
+            meanDataGridViewTextBoxColumn.Name = "meanDataGridViewTextBoxColumn";
+            meanDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // studentBindingSource
+            // 
+            studentBindingSource.DataSource = typeof(Student);
+            // 
+            // dataGridView2
+            // 
+            dataGridView2.AutoGenerateColumns = false;
+            dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView2.Columns.AddRange(new DataGridViewColumn[] { univClassNameDataGridViewTextBoxColumn, descriptionDataGridViewTextBoxColumn, professorNameDataGridViewTextBoxColumn, creditsDataGridViewTextBoxColumn });
+            dataGridView2.DataSource = univClassBindingSource;
+            dataGridView2.Location = new Point(571, 376);
+            dataGridView2.Name = "dataGridView2";
+            dataGridView2.RowHeadersWidth = 51;
+            dataGridView2.RowTemplate.Height = 29;
+            dataGridView2.Size = new Size(509, 281);
+            dataGridView2.TabIndex = 8;
+            // 
+            // univClassBindingSource
+            // 
+            univClassBindingSource.DataSource = typeof(UnivClass);
+            // 
+            // univClassNameDataGridViewTextBoxColumn
+            // 
+            univClassNameDataGridViewTextBoxColumn.DataPropertyName = "UnivClassName";
+            univClassNameDataGridViewTextBoxColumn.HeaderText = "UnivClassName";
+            univClassNameDataGridViewTextBoxColumn.MinimumWidth = 6;
+            univClassNameDataGridViewTextBoxColumn.Name = "univClassNameDataGridViewTextBoxColumn";
+            univClassNameDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // descriptionDataGridViewTextBoxColumn
+            // 
+            descriptionDataGridViewTextBoxColumn.DataPropertyName = "Description";
+            descriptionDataGridViewTextBoxColumn.HeaderText = "Description";
+            descriptionDataGridViewTextBoxColumn.MinimumWidth = 6;
+            descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
+            descriptionDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // professorNameDataGridViewTextBoxColumn
+            // 
+            professorNameDataGridViewTextBoxColumn.DataPropertyName = "ProfessorName";
+            professorNameDataGridViewTextBoxColumn.HeaderText = "ProfessorName";
+            professorNameDataGridViewTextBoxColumn.MinimumWidth = 6;
+            professorNameDataGridViewTextBoxColumn.Name = "professorNameDataGridViewTextBoxColumn";
+            professorNameDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // creditsDataGridViewTextBoxColumn
+            // 
+            creditsDataGridViewTextBoxColumn.DataPropertyName = "Credits";
+            creditsDataGridViewTextBoxColumn.HeaderText = "Credits";
+            creditsDataGridViewTextBoxColumn.MinimumWidth = 6;
+            creditsDataGridViewTextBoxColumn.Name = "creditsDataGridViewTextBoxColumn";
+            creditsDataGridViewTextBoxColumn.Width = 125;
+            // 
             // Form1
             // 
-            AutoScaleDimensions = new SizeF(13F, 32F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.OldLace;
-            ClientSize = new Size(1894, 1093);
+            ClientSize = new Size(1675, 683);
+            Controls.Add(dataGridView2);
+            Controls.Add(dataGridView1);
             Controls.Add(tbTitluCentralizator);
             Controls.Add(twClaseStudenti);
             Controls.Add(lvClase);
@@ -414,13 +622,17 @@
             Controls.Add(lvStudenti);
             Controls.Add(navBarApp);
             MainMenuStrip = navBarApp;
-            Margin = new Padding(4, 2, 4, 2);
+            Margin = new Padding(2, 1, 2, 1);
             Name = "Form1";
             Text = "A";
             contextMenuStripStudenti.ResumeLayout(false);
             navBarApp.ResumeLayout(false);
             navBarApp.PerformLayout();
             contextMenuStripClase.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)studentBindingSource).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)univClassBindingSource).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -472,5 +684,27 @@
         private TreeView twClaseStudenti;
         private ToolStripMenuItem generareRaportToolStripMenuItem;
         private TextBox tbTitluCentralizator;
+        private DataGridView dataGridView1;
+        private DataGridViewTextBoxColumn familyNameDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn givenNameDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn dateOfBirthDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn addressDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn genderDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn phoneNumberDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn yearOfStudyDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn universityDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn facultyDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn programOfStudyDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn enrollmentStatusStudentDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn enrollmentDateDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn meanDataGridViewTextBoxColumn;
+        private BindingSource studentBindingSource;
+        private DataGridView dataGridView2;
+        private DataGridViewTextBoxColumn univClassNameDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn professorNameDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn creditsDataGridViewTextBoxColumn;
+        private BindingSource univClassBindingSource;
     }
 }
