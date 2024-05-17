@@ -1,0 +1,4 @@
+ClassName	StudentName	Grade
+Arta 	Gigescu Ion	10
+Arta Plastica	Ionescu Popescu	10
+PAW	Vlad Vasilescu	10

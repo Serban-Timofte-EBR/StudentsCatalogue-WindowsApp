@@ -1,4 +1,8 @@
-﻿using System.Runtime.Serialization;
+﻿using System.Configuration;
+using System.Data;
+using System.Data.Common;
+using System.Data.SqlClient;
+using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Xml.Serialization;
 
@@ -6,6 +10,12 @@ namespace Students_Classes_Centraliser
 {
     public partial class Form1 : Form
     {
+        private SqlDataAdapter dataAdapter;
+        private DataTable studentTable;
+        private DataTable classTable;
+        private string connectionString = @"Server=(localdb)\mssqllocaldb;Database=StudentsClassesDB;Trusted_Connection=True;";
+        private int selectedStudentId;
+        private int selectedClassId;
         public Form1()
         {
             InitializeComponent();
@@ -140,6 +150,46 @@ namespace Students_Classes_Centraliser
             TreeNode nodeMRAI = new TreeNode(mraiClass.UnivClassName + " - " + mraiClass.ProfessorName);
             nodeMRAI.Tag = mraiClass;
             twClaseStudenti.Nodes.Add(nodeMRAI);
+            LoadStudents();
+            LoadClasses();
+        }
+
+        private void LoadStudents()
+        {
+            string connectionString = @"Server=(localdb)\mssqllocaldb;Database=StudentsClassesDB;Trusted_Connection=True;";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+
+                dataAdapter = new SqlDataAdapter("SELECT * FROM Students", connection);
+                SqlCommandBuilder commandBuilder = new SqlCommandBuilder(dataAdapter);
+
+                studentTable = new DataTable();
+                dataAdapter.Fill(studentTable);
+
+                studentBindingSource.DataSource = studentTable;
+                dgvStudenti.DataSource = studentBindingSource;
+            }
+        }
+
+        private void LoadClasses()
+        {
+            string connectionString = @"Server=(localdb)\mssqllocaldb;Database=StudentsClassesDB;Trusted_Connection=True;";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+
+                dataAdapter = new SqlDataAdapter("SELECT * FROM UnivClasses", connection);
+                SqlCommandBuilder sqlCommandBuilder = new SqlCommandBuilder(dataAdapter);
+
+                classTable = new DataTable();
+                dataAdapter.Fill(classTable);
+
+                univClassBindingSource.DataSource = classTable;
+                dgvClasses.DataSource = classTable;
+            }
         }
 
         private void adaugaToolStripMenuItem_Click(object sender, EventArgs e)
@@ -771,6 +821,147 @@ namespace Students_Classes_Centraliser
                     MessageBox.Show("Eroare la generarea raportului: " + ex.Message, "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+        }
+
+
+        private void btSalveazaStud_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                studentBindingSource.EndEdit();
+
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+                    dataAdapter.SelectCommand.Connection = connection;
+                    SqlCommandBuilder commandBuilder = new SqlCommandBuilder(dataAdapter);
+                    dataAdapter.Update(studentTable);
+                }
+
+                MessageBox.Show("Modificari salvate.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Eroare: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btSalveazaClase_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                univClassBindingSource.EndEdit();
+
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+                    dataAdapter.SelectCommand.Connection = connection;
+                    SqlCommandBuilder commandBuilder = new SqlCommandBuilder(dataAdapter);
+                    dataAdapter.Update(classTable);
+                }
+
+                MessageBox.Show("Modificari salvate.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Eroare: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void dgvStudenti_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = dgvStudenti.Rows[e.RowIndex];
+                tbStudentname.Text = $"{row.Cells["givenNameDataGridViewTextBoxColumn"].Value} {row.Cells["familyNameDataGridViewTextBoxColumn"].Value}";
+            }
+        }
+
+        private void dgvClasses_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = dgvClasses.Rows[e.RowIndex];
+                tbClassName.Text = row.Cells["univClassNameDataGridViewTextBoxColumn"].Value.ToString();
+            }
+        }
+
+        private void btSalveazaNota_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(tbGrade.Text))
+            {
+                MessageBox.Show("Introduceti o nota valida.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            float grade;
+            if (!float.TryParse(tbGrade.Text, out grade))
+            {
+                MessageBox.Show("Nota trebuie sa fie un numar.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+
+                string query = "INSERT INTO ClassStudent2 (ClassName, StudentName, Grade) VALUES (@ClassName, @StudentName, @Grade)";
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@ClassName", tbClassName.Text);
+                    command.Parameters.AddWithValue("@StudentName", tbStudentname.Text);
+                    command.Parameters.AddWithValue("@Grade", grade);
+
+                    try
+                    {
+                        command.ExecuteNonQuery();
+                        MessageBox.Show("Nota a fost salvata.", "Succes", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Eroare la salvarea notei: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+        }
+
+        private void btnGenereazaCatalog_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "Text Files | *.txt";
+            saveFileDialog.Title = "Salvează Catalogul";
+
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                string filePath = saveFileDialog.FileName;
+
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+                    string query = "SELECT * FROM ClassStudent2";
+
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        using (StreamWriter writer = new StreamWriter(filePath))
+                        {
+                            writer.WriteLine("ClassName\tStudentName\tGrade");
+                            while (reader.Read())
+                            {
+                                string className = reader["ClassName"].ToString();
+                                string studentName = reader["StudentName"].ToString();
+                                string grade = reader["Grade"].ToString();
+
+                                writer.WriteLine($"{className}\t{studentName}\t{grade}");
+                            }
+                        }
+                    }
+                }
+
+                MessageBox.Show("Catalogul a fost generat.", "Succes", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
         }
     }
 }

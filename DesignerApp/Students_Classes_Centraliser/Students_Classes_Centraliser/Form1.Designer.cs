@@ -74,7 +74,10 @@
             stergeToolStripMenuItem3 = new ToolStripMenuItem();
             twClaseStudenti = new TreeView();
             tbTitluCentralizator = new TextBox();
-            dataGridView1 = new DataGridView();
+            studentBindingSource = new BindingSource(components);
+            univClassBindingSource = new BindingSource(components);
+            btSalveazaStud = new Button();
+            dgvStudenti = new DataGridView();
             familyNameDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             givenNameDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             dateOfBirthDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
@@ -89,20 +92,27 @@
             enrollmentStatusStudentDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             enrollmentDateDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             meanDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            studentBindingSource = new BindingSource(components);
-            dataGridView2 = new DataGridView();
-            univClassBindingSource = new BindingSource(components);
+            dgvClasses = new DataGridView();
             univClassNameDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             descriptionDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             professorNameDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             creditsDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            btSalveazaClase = new Button();
+            tbStudentname = new TextBox();
+            tbClassName = new TextBox();
+            tbGrade = new TextBox();
+            label1 = new Label();
+            label2 = new Label();
+            label3 = new Label();
+            btSalveazaNota = new Button();
+            btnGenereazaCatalog = new Button();
             contextMenuStripStudenti.SuspendLayout();
             navBarApp.SuspendLayout();
             contextMenuStripClase.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)studentBindingSource).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)univClassBindingSource).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvStudenti).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvClasses).BeginInit();
             SuspendLayout();
             // 
             // lvStudenti
@@ -184,7 +194,7 @@
             tbTitluStudenti.Location = new Point(1, 33);
             tbTitluStudenti.Margin = new Padding(2, 1, 2, 1);
             tbTitluStudenti.Name = "tbTitluStudenti";
-            tbTitluStudenti.Size = new Size(515, 27);
+            tbTitluStudenti.Size = new Size(516, 27);
             tbTitluStudenti.TabIndex = 1;
             tbTitluStudenti.Text = "                                           Lista Studenti";
             tbTitluStudenti.TextChanged += tbTitluStudenti_TextChanged;
@@ -428,18 +438,37 @@
             tbTitluCentralizator.TabIndex = 6;
             tbTitluCentralizator.Text = "                                      Centralizator Clase - Studenti";
             // 
-            // dataGridView1
+            // studentBindingSource
             // 
-            dataGridView1.AutoGenerateColumns = false;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { familyNameDataGridViewTextBoxColumn, givenNameDataGridViewTextBoxColumn, dateOfBirthDataGridViewTextBoxColumn, emailDataGridViewTextBoxColumn, addressDataGridViewTextBoxColumn, genderDataGridViewTextBoxColumn, phoneNumberDataGridViewTextBoxColumn, yearOfStudyDataGridViewTextBoxColumn, universityDataGridViewTextBoxColumn, facultyDataGridViewTextBoxColumn, programOfStudyDataGridViewTextBoxColumn, enrollmentStatusStudentDataGridViewTextBoxColumn, enrollmentDateDataGridViewTextBoxColumn, meanDataGridViewTextBoxColumn });
-            dataGridView1.DataSource = studentBindingSource;
-            dataGridView1.Location = new Point(0, 373);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.RowTemplate.Height = 29;
-            dataGridView1.Size = new Size(516, 284);
-            dataGridView1.TabIndex = 7;
+            studentBindingSource.DataSource = typeof(Student);
+            // 
+            // univClassBindingSource
+            // 
+            univClassBindingSource.DataSource = typeof(UnivClass);
+            // 
+            // btSalveazaStud
+            // 
+            btSalveazaStud.Location = new Point(0, 680);
+            btSalveazaStud.Name = "btSalveazaStud";
+            btSalveazaStud.Size = new Size(164, 49);
+            btSalveazaStud.TabIndex = 9;
+            btSalveazaStud.Text = "Salveaza Studentii";
+            btSalveazaStud.UseVisualStyleBackColor = true;
+            btSalveazaStud.Click += btSalveazaStud_Click;
+            // 
+            // dgvStudenti
+            // 
+            dgvStudenti.AutoGenerateColumns = false;
+            dgvStudenti.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvStudenti.Columns.AddRange(new DataGridViewColumn[] { familyNameDataGridViewTextBoxColumn, givenNameDataGridViewTextBoxColumn, dateOfBirthDataGridViewTextBoxColumn, emailDataGridViewTextBoxColumn, addressDataGridViewTextBoxColumn, genderDataGridViewTextBoxColumn, phoneNumberDataGridViewTextBoxColumn, yearOfStudyDataGridViewTextBoxColumn, universityDataGridViewTextBoxColumn, facultyDataGridViewTextBoxColumn, programOfStudyDataGridViewTextBoxColumn, enrollmentStatusStudentDataGridViewTextBoxColumn, enrollmentDateDataGridViewTextBoxColumn, meanDataGridViewTextBoxColumn });
+            dgvStudenti.DataSource = studentBindingSource;
+            dgvStudenti.Location = new Point(1, 379);
+            dgvStudenti.Name = "dgvStudenti";
+            dgvStudenti.RowHeadersWidth = 51;
+            dgvStudenti.RowTemplate.Height = 29;
+            dgvStudenti.Size = new Size(516, 282);
+            dgvStudenti.TabIndex = 10;
+            dgvStudenti.CellClick += dgvStudenti_CellClick;
             // 
             // familyNameDataGridViewTextBoxColumn
             // 
@@ -553,26 +582,19 @@
             meanDataGridViewTextBoxColumn.Name = "meanDataGridViewTextBoxColumn";
             meanDataGridViewTextBoxColumn.Width = 125;
             // 
-            // studentBindingSource
+            // dgvClasses
             // 
-            studentBindingSource.DataSource = typeof(Student);
-            // 
-            // dataGridView2
-            // 
-            dataGridView2.AutoGenerateColumns = false;
-            dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView2.Columns.AddRange(new DataGridViewColumn[] { univClassNameDataGridViewTextBoxColumn, descriptionDataGridViewTextBoxColumn, professorNameDataGridViewTextBoxColumn, creditsDataGridViewTextBoxColumn });
-            dataGridView2.DataSource = univClassBindingSource;
-            dataGridView2.Location = new Point(571, 376);
-            dataGridView2.Name = "dataGridView2";
-            dataGridView2.RowHeadersWidth = 51;
-            dataGridView2.RowTemplate.Height = 29;
-            dataGridView2.Size = new Size(509, 281);
-            dataGridView2.TabIndex = 8;
-            // 
-            // univClassBindingSource
-            // 
-            univClassBindingSource.DataSource = typeof(UnivClass);
+            dgvClasses.AutoGenerateColumns = false;
+            dgvClasses.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvClasses.Columns.AddRange(new DataGridViewColumn[] { univClassNameDataGridViewTextBoxColumn, descriptionDataGridViewTextBoxColumn, professorNameDataGridViewTextBoxColumn, creditsDataGridViewTextBoxColumn });
+            dgvClasses.DataSource = univClassBindingSource;
+            dgvClasses.Location = new Point(566, 379);
+            dgvClasses.Name = "dgvClasses";
+            dgvClasses.RowHeadersWidth = 51;
+            dgvClasses.RowTemplate.Height = 29;
+            dgvClasses.Size = new Size(515, 282);
+            dgvClasses.TabIndex = 11;
+            dgvClasses.CellClick += dgvClasses_CellClick;
             // 
             // univClassNameDataGridViewTextBoxColumn
             // 
@@ -606,14 +628,102 @@
             creditsDataGridViewTextBoxColumn.Name = "creditsDataGridViewTextBoxColumn";
             creditsDataGridViewTextBoxColumn.Width = 125;
             // 
+            // btSalveazaClase
+            // 
+            btSalveazaClase.Location = new Point(566, 680);
+            btSalveazaClase.Name = "btSalveazaClase";
+            btSalveazaClase.Size = new Size(164, 49);
+            btSalveazaClase.TabIndex = 12;
+            btSalveazaClase.Text = "Salveaza Clase";
+            btSalveazaClase.UseVisualStyleBackColor = true;
+            btSalveazaClase.Click += btSalveazaClase_Click;
+            // 
+            // tbStudentname
+            // 
+            tbStudentname.Location = new Point(1218, 428);
+            tbStudentname.Name = "tbStudentname";
+            tbStudentname.Size = new Size(257, 27);
+            tbStudentname.TabIndex = 13;
+            // 
+            // tbClassName
+            // 
+            tbClassName.Location = new Point(1218, 494);
+            tbClassName.Name = "tbClassName";
+            tbClassName.Size = new Size(257, 27);
+            tbClassName.TabIndex = 14;
+            // 
+            // tbGrade
+            // 
+            tbGrade.Location = new Point(1218, 562);
+            tbGrade.Name = "tbGrade";
+            tbGrade.Size = new Size(257, 27);
+            tbGrade.TabIndex = 15;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(1130, 431);
+            label1.Name = "label1";
+            label1.Size = new Size(63, 20);
+            label1.TabIndex = 16;
+            label1.Text = "Student:";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(1130, 497);
+            label2.Name = "label2";
+            label2.Size = new Size(47, 20);
+            label2.TabIndex = 17;
+            label2.Text = "Clasa:";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(1130, 569);
+            label3.Name = "label3";
+            label3.Size = new Size(45, 20);
+            label3.TabIndex = 18;
+            label3.Text = "Nota:";
+            // 
+            // btSalveazaNota
+            // 
+            btSalveazaNota.Location = new Point(1130, 633);
+            btSalveazaNota.Name = "btSalveazaNota";
+            btSalveazaNota.Size = new Size(129, 41);
+            btSalveazaNota.TabIndex = 19;
+            btSalveazaNota.Text = "Salveaza Nota";
+            btSalveazaNota.UseVisualStyleBackColor = true;
+            btSalveazaNota.Click += btSalveazaNota_Click;
+            // 
+            // btnGenereazaCatalog
+            // 
+            btnGenereazaCatalog.Location = new Point(1288, 633);
+            btnGenereazaCatalog.Name = "btnGenereazaCatalog";
+            btnGenereazaCatalog.Size = new Size(187, 41);
+            btnGenereazaCatalog.TabIndex = 20;
+            btnGenereazaCatalog.Text = "Genereaza Catalog";
+            btnGenereazaCatalog.UseVisualStyleBackColor = true;
+            btnGenereazaCatalog.Click += btnGenereazaCatalog_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.OldLace;
-            ClientSize = new Size(1675, 683);
-            Controls.Add(dataGridView2);
-            Controls.Add(dataGridView1);
+            ClientSize = new Size(1675, 787);
+            Controls.Add(btnGenereazaCatalog);
+            Controls.Add(btSalveazaNota);
+            Controls.Add(label3);
+            Controls.Add(label2);
+            Controls.Add(label1);
+            Controls.Add(tbGrade);
+            Controls.Add(tbClassName);
+            Controls.Add(tbStudentname);
+            Controls.Add(btSalveazaClase);
+            Controls.Add(dgvClasses);
+            Controls.Add(dgvStudenti);
+            Controls.Add(btSalveazaStud);
             Controls.Add(tbTitluCentralizator);
             Controls.Add(twClaseStudenti);
             Controls.Add(lvClase);
@@ -629,10 +739,10 @@
             navBarApp.ResumeLayout(false);
             navBarApp.PerformLayout();
             contextMenuStripClase.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ((System.ComponentModel.ISupportInitialize)studentBindingSource).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
             ((System.ComponentModel.ISupportInitialize)univClassBindingSource).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvStudenti).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvClasses).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -684,7 +794,10 @@
         private TreeView twClaseStudenti;
         private ToolStripMenuItem generareRaportToolStripMenuItem;
         private TextBox tbTitluCentralizator;
-        private DataGridView dataGridView1;
+        private BindingSource studentBindingSource;
+        private BindingSource univClassBindingSource;
+        private Button btSalveazaStud;
+        private DataGridView dgvStudenti;
         private DataGridViewTextBoxColumn familyNameDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn givenNameDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn dateOfBirthDataGridViewTextBoxColumn;
@@ -699,12 +812,19 @@
         private DataGridViewTextBoxColumn enrollmentStatusStudentDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn enrollmentDateDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn meanDataGridViewTextBoxColumn;
-        private BindingSource studentBindingSource;
-        private DataGridView dataGridView2;
+        private DataGridView dgvClasses;
         private DataGridViewTextBoxColumn univClassNameDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn professorNameDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn creditsDataGridViewTextBoxColumn;
-        private BindingSource univClassBindingSource;
+        private Button btSalveazaClase;
+        private TextBox tbStudentname;
+        private TextBox tbClassName;
+        private TextBox tbGrade;
+        private Label label1;
+        private Label label2;
+        private Label label3;
+        private Button btSalveazaNota;
+        private Button btnGenereazaCatalog;
     }
 }

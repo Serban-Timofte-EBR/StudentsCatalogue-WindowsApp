@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Students_Classes_Centraliser")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c363af2ce9e0de7be069d057239eb1a9bc0e1821")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+350cb68e6c655692275815f58e26490f9e4f43b9")]
 [assembly: System.Reflection.AssemblyProductAttribute("Students_Classes_Centraliser")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Students_Classes_Centraliser")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
